@@ -15,15 +15,9 @@ import '../../styles/layer.css';
 const BaseLayout = ({children}) => {
     return (
         <Container fluid>
-
             <Header />
-
-            <Section>
-                {children}
-            </Section> 
-
+            <Section children={children} />
             <Footer />
-
         </Container>
     );
 };

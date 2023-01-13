@@ -3,8 +3,6 @@ import React from 'react';
 
 const Notice = () => {
 
-    console.log('notice....')
-
     return (
         <div >
             Notice...

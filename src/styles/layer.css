@@ -11,7 +11,8 @@
     right: 0;
     bottom: 0;
     height: 30px;
-    background-color: grey;
+    background-color: #efefef;
+    border-top: 1px solid gray;
 }
 
 .page-loader {
@@ -22,4 +23,14 @@
     left: 0;
     padding-top: 80px;
     text-align: center;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+  }
+
+  #collasible-nav-dropdown{
+    color: white;
+    font-weight: bold;
+
 }
