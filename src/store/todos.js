@@ -1,0 +1,22 @@
+// action type
+const ADD_TODO = 'ADD_TODO';
+const TOGGLE_TODO = 'TOGGLE_TODO';
+
+// action function
+let nextId = 1;
+
+export const addTodo = text => ({type: ADD_TODO, todo:{id: nextId++, text}});
+export const toggleTodo = id => ({type: TOGGLE_TODO, id});
+
+// init
+const initialState = [
+    {id: 1, text: 'example1', done: false}
+];
+
+export default function todos(state = initialState, action){
+    switch(action.type){
+        case ADD_TODO: return state.concat(action.todo);
+        case TOGGLE_TODO: return state.map(todo => todo.id === action.id ? {...todo, done: !todo.done} : todo);
+        default: return state;
+    }
+}

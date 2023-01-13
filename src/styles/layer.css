@@ -1,0 +1,25 @@
+
+
+.wrapper{
+    margin-top: 70px;
+    min-height: 100%;
+    margin-bottom: -30px;
+}
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    background-color: grey;
+}
+
+.page-loader {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+    text-align: center;
+}
