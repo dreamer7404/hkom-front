@@ -5,7 +5,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 
 // components
-import Header from "./Header";
+import Header2 from "./Header2";
 import Footer from "./Footer";
 import Section from './Section';
 
@@ -15,7 +15,7 @@ import '../../styles/layer.css';
 const BaseLayout = ({children}) => {
     return (
         <Container fluid>
-            <Header />
+            <Header2 />
             <Section children={children} />
             <Footer />
         </Container>
