@@ -10,6 +10,10 @@ import PageLoader from '../Common/PageLoader';
 
 // children components
 const Login = lazy(() => import('../Contents/Auth/Login'));
+const Dashboard = lazy(() => import('../Contents/Home/Dashboard'));
+
+const TotalStockMain = lazy(() => import('../Contents/Ivm/TotalStockMain'));
+const SewonIvmMain = lazy(() => import('../Contents/Ivm/SewonIvmMain'));
 
 const Notice = lazy(() => import('../Contents/Board/Notice'));
 const Profile = lazy(() => import('../Contents/Profile/Profile'));
@@ -34,7 +38,7 @@ const BaseRoutes = () => {
             <BasePage>
                 <Suspense fallback={<PageLoader />}>
                     <Routes location={location}>
-                        <Route  path="/login" component={waitFor(Login)}/>
+                        <Route  path="/login" element={<Login />}></Route>
                         {/* <Route  path="/logout" component={waitFor(Logout)}/> */}
                     </Routes>
                 </Suspense>
@@ -48,8 +52,9 @@ const BaseRoutes = () => {
                         <div>
                             <Suspense fallback={<PageLoader/>}>
                                 <Routes location={location}>
-                                    <Route path="/notice" element={<Notice />}></Route>
-                                    <Route path="/profile" element={<Profile />}></Route>
+                                    <Route path="/totalStock" element={<TotalStockMain />}></Route>
+                                    <Route path="/sewonIvm" element={<SewonIvmMain />}></Route>
+                                    <Route path="/" element={<Dashboard />}></Route>
                                      {/*<Route path="/profile" component={waitFor(Profile)} />
                                     <Route path="*" component={waitFor(Login)} /> */}
                                 </Routes>

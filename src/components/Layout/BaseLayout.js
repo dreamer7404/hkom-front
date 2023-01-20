@@ -12,15 +12,15 @@ import Section from './Section';
 
 // style
 import '../../styles/layer.css';
+import SitePath from './SitePath';
 
 const BaseLayout = ({children}) => {
-
-
-
     
     return (
         <Container fluid>
-            <Header2 />
+            <Header2  />
+            <div className='mb-5'>&nbsp;</div>
+            {/* <SitePath  /> */}
             <Section children={children} />
             <Footer />
         </Container>
