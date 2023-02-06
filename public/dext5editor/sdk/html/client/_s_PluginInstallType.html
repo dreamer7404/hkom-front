@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">    
+    <span class="pl_type">[플러그인 전용]</span>        
+    <h3 class="title">DEXT5 Editor :: PluginInstallType</h3>
+    <p class="ttl">XML : &#60;plugin_install_type&#62;.....&#60;/plugin_install_type&#62;<br />Config : config.PluginInstallType<br />
+        XML : &#60;plugin_install_type install_url="....."&#62;&#60;/plugin_install_type&#62;<br />Config : config.PluginInstallUrl<br />
+        XML : &#60;plugin_install_type use_install_guide="....."&#62;&#60;/plugin_install_type&#62;<br />Config : config.UsePluginInstallGuide<br />
+        XML : &#60;plugin_install_type install_guide_type="....."&#62;&#60;/plugin_install_type&#62;<br />Config : config.PluginInstallGuideType<br />
+        XML : &#60;plugin_install_type zIndex="....."&#62;&#60;/plugin_install_type&#62;<br />Config : config.PluginInstallGuideZIndex<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        plugin 설치관련 내용을 설정합니다.<br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">plugin_install_type</span>&nbsp;&nbsp;기본값은 "0"이며 설치시 dext5editor.exe를 설치,<br /><span style="margin-left:106px;">"2"로 설정 시 설치시 dext5editorSL.exe를 설치합니다.</span> <br />
+        <span class="firebrick">install_url</span>&nbsp;&nbsp;plugin_install_type의 설정값이 "1"일때 설정 되며, 플러그인 설치 url을 설정합니다.<br /><span style="margin-left:61px;">(미설정 시 기본경로(제품폴더>plugin)의 파일을 설치하게 됩니다.)</span><br />
+        <span class="firebrick">use_install_guide</span>&nbsp;&nbsp;플러그인 설치시 설치안내 팝업창의 팝업여부를 설정합니다.<br />
+        <span class="firebrick">install_guide_type</span>&nbsp;&nbsp;use_install_guide의 설정값이 "1"일때 설정되며, "0"으로 설정시 플러그인 설치 완료 후에도 설치안내 팝업을 유지하고,<br />
+        <span style="margin-left:104px;">"1"로 설정시 플러그인 설치 완료 후 설치안내 팝업을 닫습니다.</span> <br />  
+        <span class="firebrick">zIndex</span>&nbsp;&nbsp;install_guide_type의 설정값이 "0"일때 설정되며, 플러그인 설치 시 설치안내 팝업창의 zIndex를 설정합니다. (기본값은 1000000 입니다.)<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>plugin 설치관련 내용을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;plugin_install_type install_url="....." use_install_guide="1" install_guide_type="0" zIndex="500000"&#62;0&#60;/plugin_install_type&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.PluginInstallType = "0";
+        DEXT5.config.PluginInstallUrl = ".....";
+        DEXT5.config.UsePluginInstallGuide = "1";
+        DEXT5.config.PluginInstallGuideType = "0";
+        DEXT5.config.PluginInstallGuideZIndex = "500000";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

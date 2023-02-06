@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: Undo</h3>
+    <p class="ttl">XML : &#60;undo mode="....."&#62;&#60;/undo&#62;, Config : config.UndoMode<br />
+        XML : &#60;undo limit_length="....."&#62;&#60;/undo&#62;, Config : config.UndoLimitLength<br />
+        XML : &#60;undo_count&#62;.....&#60;/undo_count&#62;, Config : config.UndoCount<br />
+        XML : &#60;light_mode&#62;.....&#60;/light_mode&#62;, Config : config.UseUndoLightMode<br />
+        XML : &#60;allow_delete_count&#62;.....&#60;/allow_delete_count&#62;, Config : config.AllowDeleteCount
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        Undo, Redo에 관련된 내용을 설정합니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">mode</span>&nbsp;&nbsp;undo, redo의 모드를 설정합니다. (1로 설정 시 기존모드로 동작, 2로 설정 시 word와 유사방식으로 동작합니다.)<br />
+        <span class="firebrick">limit_length</span>&nbsp;&nbsp;set되는 데이터가 특정 길이 이상이면 undo, redo를 동작시키지 않도록 설정합니다. (0이상의 수로 설정 시 동작합니다.)<br />
+        <span class="firebrick">undo_count</span>&nbsp;&nbsp;글 작성중 설정값의 글자수 작성 시 마다 undo 지점으로 추가합니다. (글자 수를 입력합니다.)<br />
+        <span class="firebrick">light_mode</span>&nbsp;&nbsp;backSpace, delete, 엔터키 단순 입력 시에는 undo에 담지 않고,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 셀렉션한 후 해당키를 입력할때만 undo에 담도록 설정합니다.(1로 설정 시 적용됩니다.)<br />
+        <span class="firebrick">allow_delete_count</span>&nbsp;&nbsp;del, backSpace 키 입력 시 undo Count를 사용하도록 설정합니다. (1로 설정 시 적용됩니다.)<br />
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>Undo, Redo에 관련된 내용을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;undo mode="2" limit_length="500"&#62;
+        &#60;undo_count&#62;30&#60;/undo_count&#62;
+        &#60;light_mode&#62;1&#60;/light_mode&#62;
+        &#60;allow_delete_count&#62;1&#60;/allow_delete_count&#62;
+    &#60;/undo&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;  
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.UndoMode = "2";
+        DEXT5.config.UndoLimitLength = "500";
+        DEXT5.config.UndoCount = "30";
+        DEXT5.config.UseUndoLightMode = "1";
+        DEXT5.config.AllowDeleteCount = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

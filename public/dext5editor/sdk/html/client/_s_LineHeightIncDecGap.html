@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: LineHeightIncDecGap</h3>
+    <p class="ttl">XML : &#60;line_height inc_dec_gap="....."&#62;&#60;/line_height&#62;, Config : config.LineHeightIncDecGap</p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        tool bar의 줄 간격 콤보박스옆 위아래 클릭도구를 사용시 증감정도를 설정합니다.<br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        tool bar의 줄 간격 콤보박스옆 위아래 클릭도구를 사용시 증감정도를 설정합니다.<br /> 
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>tool bar의 줄 간격 콤보박스옆 위아래 클릭도구를 사용시 증감정도를 0.5로 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;line_height inc_dec_gap="0.5"&#62;&#60;/line_height&#62;
+&#60;setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.LineHeightIncDecGap = "0.5";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

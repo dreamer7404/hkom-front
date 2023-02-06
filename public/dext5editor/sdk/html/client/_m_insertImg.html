@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: insertImg</h3>
+    <p class="ttl">void insertImg(attributesObj, imgObj, editor_id)</p>
+    <p class="txt">
+        에디터 선택영역에 attributesObj의 정보로 image 객체를 생성하여 삽입합니다. <br />
+        imgObj의 오브젝트가 에디터의 body에 존재하면 해당 image 객체를 attributesObj의 정보로 변경합니다. <br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">attributesObj</span>&nbsp;&nbsp;생성 또는 교체할 image 객체의 정보를 의미합니다.<br />
+        <span class="firebrick">imgObj</span>&nbsp;&nbsp;에디터 body에 존재하는 교체대상의 image 객체를 의미합니다. (생성을 원하면 null 입력)<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        <span class="firebrick">attributesObj</span>는 다음과 같은 정보를 설정합니다. <br />
+        name, id, class, title, alt, src, style.width, style.height, style.text_align <br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5Input(){
+        // 테스트용 image 생성정보
+        var Obj = {
+            name:"DEXT5", 
+            id:"DEXT5EDITOR", 
+            class:"DEXT5CLASS", 
+            title:"DEXT5TITLE",
+            alt:"dext5",
+            src:"http://www.raonwiz.com/images/raon_logo.png",
+            "style.width":"200px", 
+            "style.height":"100px", 
+            "style.text_align":"center"
+        };
+        // id가 'editor1'인 Obj정보의 image 객체를 새로 생성하여 삽입합니다.
+        DEXT5.insertImg(Obj, null, 'editor1');
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

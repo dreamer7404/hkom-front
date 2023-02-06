@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">             
+    <span class="pl_type">[플러그인 전용]</span>     
+    <h3 class="title">DEXT5 Editor :: OpenDocument.Word</h3>
+    <p class="ttl">XML : &#60;word max_page="....."&#62;&#60;/word&#62;, Config : config.OpenDocument.Word.MaxPage <br />
+        XML : &#60;word max_size="....."&#62;&#60;/word&#62;, Config : config.OpenDocument.Word.MaxSize<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        워드파일의 열기 관련 설정을 적용합니다.<br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">max_page</span>&nbsp;&nbsp;파일 열기할 word파일의 최대 page 수를 설정합니다. <br />
+        <span class="firebrick">max_size</span>&nbsp;&nbsp;파일 열기할 word파일의 최대 용량을 설정합니다. <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>워드파일의 열기 관련 설정을 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;open_document&#62;
+        &#60;word max_page="2", max_size="10000"&#62;&#60;/word&#62;
+    &#60;/open_document&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.OpenDocument.Word = {
+            MaxPage : "2",
+            MaxSize : "10000",
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

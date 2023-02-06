@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <span class="pl_type">[플러그인 전용]</span>     
+    <h3 class="title nline">DEXT5 Editor :: dext5EventBeforeOpenHtmlConvert</h3>
+    <p class="ttl">void dext5EventBeforeOpenHtmlConvert(strFileFormat, strFileFullPath)</p>
+    <p class="txt">
+        플러그인 모드 에디터에서 파일열기 수행 전 이벤트가 발생합니다.
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">strFileFormat</span>&nbsp;&nbsp;열기한 파일의 파일포맷을 의미합니다.<br />
+        <span class="firebrick">strFileFullPath</span>&nbsp;&nbsp;열기한 파일의 실제 경로를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        에디터의 설정파일(dext5editor/config/dext_editor.xml)의 <b>setting 설정 open_document의 before_open_event 속성값이 1인 경우</b> 이벤트가 발생합니다.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;
+&#60;script type="text/javascript"&#62;
+
+    function dext5EventBeforeOpenHtmlConvert(strFileFormat, strFileFullPath) {
+        // work something ...
+    }
+
+&#60;/script&#62; 	
+&#60;/head&#62;
+&#60;body&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;div style="width:900px;height:550px"&#62;  
+
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor("editor1");
+    &#60;/script&#62;        
+
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: addUserD5Event</h3>
+    <p class="ttl">string addUserD5Event(id, eventName, funObj, editor_id)</p>
+    <p class="txt">
+        에디터 작성영역에 해당 id를 가진 element가 있으면 이벤트를 추가 합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        API 사용이 올바르지 않거나, 파라미터의 id로 존재하는 element가 없을 시 해당하는 문구를 리턴합니다.<br />
+        적용이 완료되면 '' 을 리턴합니다.<br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">id</span>&nbsp;&nbsp;이벤트를 추가할 에디터 작성영역에 존재하는 element의 ID 값을 의미합니다.<br />
+        <span class="firebrick">eventName</span>&nbsp;&nbsp;추가할 이벤트의 종류를 의미합니다.<br />
+        <span class="firebrick">funObj</span>&nbsp;&nbsp;적용한 element에서 이벤트 발생시 실행할 함수를 의미합니다.<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;API를 적용할 에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_editor_loaded_event() {
+        // 테스트용 element(&#60;p&#62;)를 추가합니다.
+        var html = '&#60;p id="D5Event">Event Test&#60;/p&#62;';
+        DEXT5.setInsertHTML(html, 'editor1');
+    }
+
+    function dext_editor_set_insert_complete_event() {
+        // 에디터에 element가 추가완료되면 test함수를 생성한 후 API를 호출합니다.
+        var D5func = function () { alert("Hello DEXT5 Editor!!"); }<br />
+
+        // id가 editor1인 에디터의 body영역에 D5Event의 id를 가진 element가 존재하면 mousedown 이벤트로 D5func를 추가합니다.
+        var message = DEXT5.addUserD5Event('D5Event', 'mousedown', D5func, 'editor1');<br />
+        
+        // 리턴값으로 API 적용 여부를 확인합니다.
+        if(message!=''){alert("API적용 실패");}
+        else{alert("API적용 완료");}
+    }
+
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

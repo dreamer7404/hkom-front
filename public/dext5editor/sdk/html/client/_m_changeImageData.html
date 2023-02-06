@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: changeImageData</h3>
+    <p class="ttl">void changeImageData(valueObject, editor_id)</p>
+    <p class="txt">
+        에디터 body영역에서 선택되어있는 image element를 파라미터의 image element로 변경합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음. <br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">valueObject</span>&nbsp;&nbsp;에디터 body에서 선택된 이미지를 대체할 이미지 element를 의미합니다.<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;API를 적용할 에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        <span class="firebrick">valueObject</span>는 다음과 같은 정보를 설정합니다. <br />
+        src, style.width, style.height<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_mouse_event(mouseEvent, eventObject, currElem) {
+        // img element를 mouseup 시에 적용되도록 설정합니다.
+        if (mouseEvent == "mouseup" && currElem.nodeName == "IMG") {
+            // 테스트용 이미지 element를 생성합니다.
+            var tempImg = document.createElement('IMG');
+            tempImg.src = "http://www.raonwiz.com/images/raon_logo.png";
+            tempImg.width = 200;
+            tempImg.height = 100;
+            // mouseup 한 element 객체와 테스트용 이미지 element의 src가 같지 않으면 적용합니다.
+            if (currElem.src != tempImg.src) {
+                // editor1의 id를 가진 에디터에 img element가 선택상태이면 tempImg로 교체합니다.
+                DEXT5.changeImageData(tempImg, 'editor1');
+            }
+        }
+    }
+        
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

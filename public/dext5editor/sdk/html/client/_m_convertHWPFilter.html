@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: convertHWPFilter</h3>
+    <p class="ttl">string convertHWPFilter(strHtml, editor_id)</p>
+    <p class="txt">
+        html 소스를 hwp(한글파일)포맷으로 변경하여 반환합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        hwp(한글파일) 포맷으로 전환된 html소스 <br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">strHtml</span>&nbsp;&nbsp;변경할 html 소스를 의미합니다.<br />
+        <span class="firebrick">param</span>&nbsp;&nbsp;에디터 작성영역에서 추출할 태그의 ID를 의미합니다. ("" 입력시 전체, {extraID:"....."} 로 적용)<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_editor_loaded_event() {
+        // 테스트용 html을 생성합니다.
+        var html = '';
+        html += '&#60;head&#62;';
+        html += '&#60;title&#62;DEXT5 Editor&#60;/title&#62;';
+        html += '&#60;meta content="text/html" charset="utf-8" http-equiv="Content-Type"&#62;'; 
+        html += '&#60;style type="text/css"&#62;';
+        html += 'p { line-height:1.2; margin-top:0px; margin-bottom:0px; }';
+        html += '&#60;/style&#62;';
+        html += '&#60;/head&#62;';
+        html += '&#60;body&#62;';
+        html += '&#60;p id="dext5"&#62;Hi, DEXT5 Editor!!&#60;/p&#62;';
+        html += '&#60;/body&#62;';
+
+        // html 소스를 hwp(한글파일)포맷으로 변경한 값을 반환받습니다.
+        var text = DEXT5.convertHWPFilter(html, {extraID:"dext5"});
+        alert(text);
+    }
+        
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

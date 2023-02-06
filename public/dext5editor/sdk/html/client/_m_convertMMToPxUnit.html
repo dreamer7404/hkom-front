@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: convertMMToPxUnit</h3>
+    <p class="ttl">string convertMMToPxUnit(strHtml)</p>
+    <p class="txt">
+        태그 안의 width와 height 중 mm단위가 존재하면 px단위로 변경하여 반환합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        태그 안의 width와 height 중 mm단위를 px단위로 변경한 html소스 <br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">strHtml</span>&nbsp;&nbsp;변경할 html 소스를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_editor_loaded_event() {
+        // 테스트용 html을 생성합니다.
+        var html = '';
+        html += '&#60;head&#62;';
+        html += '&#60;title&#62;DEXT5 Editor&#60;/title&#62;';
+        html += '&#60;meta content="text/html" charset="utf-8" http-equiv="Content-Type"&#62;'; 
+        html += '&#60;/head&#62;';
+        html += '&#60;body&#62;';
+        html += '&#60;iframe style="background: gray;" width="500mm" height="300mm"&#62;&#60;/iframe&#62;';
+        html += '&#60;/body&#62;';
+
+        // html소스의 style 부분중 크기단위를 모두 px로 변경한 값을 반환받습니다.
+        var text = DEXT5.convertMMToPxUnit(html);
+        alert(text);
+    }
+        
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

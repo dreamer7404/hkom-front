@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">            
+    <h3 class="title">DEXT5 Editor :: setHeightForDisplay</h3>
+    <p class="ttl">void setHeightForDisplay(editor_id)</p>
+    <p class="txt">
+        에디터의 작성한 내용보다 에디터의 높이가 짧으면(스크롤이 있고, 잘린 내용이 있으면) 한 번에 볼 수 있도록 크기를 맞춰서 늘립니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다. <br />    
+    </p>
+    <p class="mttl01">remarks</p>  
+    <p class="txt">
+        에디터 설정파일(dext5editor/config/dext_editor.xml)의 <b>view_mode_auto_width 혹은 view_mode_auto_height 설정값이 "1"</b> 이고,<br />
+        <b>mode가 "view"로 설정 시</b> 동작합니다. <br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5ForbiddenWord(){
+        // id가 editor1인 에디터의 작성한 내용보다 에디터의 높이가 짧으면 한번에 볼 수 있도록 크기를 맞춰서 늘립니다.
+        DEXT5.setHeightForDisplay('editor1');
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

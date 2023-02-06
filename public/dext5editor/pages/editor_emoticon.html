@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Emoticon</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script type="text/javascript">        
+        document.write('<scr' + 'ipt src="../config/editor_crossdomain_config.js?t=' + (new Date).getTime() + '" type="text/javascript"><\/scr' + 'ipt>');
+    </script>
+
+    <script type="text/javascript">
+        var DEXTTOP = parent;
+        var Dext5LayerFrame = DEXTTOP.DEXTDOC.getElementById("dext_frame_" + DEXTTOP.G_CURREDITOR.ID);
+        if (DEXTTOP.G_CURREDITOR.dialogWindow != null) {
+            DEXTTOP = Dext5LayerFrame.contentWindow.DEXTTOP;
+        }
+        var Dext5LayerWin = Dext5LayerFrame.contentWindow;
+
+        document.write('<link href="' + Dext5LayerWin._dext_editor._config.popupCssUrl + '?ver=' + DEXTTOP.DEXT5.ReleaseVer + '" rel="stylesheet" type="text/css" />');
+        if (Dext5LayerWin._dext_editor._config.customCssUrlDetailApply == "1") {
+            document.write('<link href="' + Dext5LayerWin._dext_editor._config.style.customCssUrl + "?ver=" + DEXTTOP.DEXT5.ReleaseVer + '" rel="stylesheet" type="text/css" />');
+        }
+        document.write('<scr' + 'ipt src="' + Dext5LayerWin._dext_editor._config.dialogJSUrl + '?ver=' + DEXTTOP.DEXT5.ReleaseVer + '" type="text/javascript"><\/scr' + 'ipt>');
+    </script>
+
+    <script type="text/javascript">
+        var xhr_config;
+
+        function page_loaded_event() {
+            var _skin_name = LayerWin._dext_editor._config.style.skinName;
+
+            document.getElementById("dext_dialog_box").className = 'DEXT_fiVe_ED_Popup_Type01 DEXT_fiVe_PUi_' + _skin_name;
+
+            document.getElementById('span_title').innerHTML = LayerWin.dext5_lang.emoticon.title;
+            document.getElementById('span_cancel').innerHTML = LayerWin.dext5_lang.emoticon.btn_close;
+
+            document.title = LayerWin.dext5_lang.emoticon.frame_title;
+
+            var header = LayerWin.getElementsByClass("EdiTor_Popup_header", document);
+            header[0].onselectstart = function () {
+                return false;
+            };
+
+            var _config_url = LayerWin._dext_editor._config.emoticon_url;
+
+            xhr_config = DEXTTOP.DEXT5.util.ajax.xml_http_request();
+            xhr_config.onreadystatechange = function () {
+                if (xhr_config.readyState == 4) {
+                    if (xhr_config.status == 200) {
+                        var xml_doc = xhr_config.responseXML;
+                        if (xml_doc == null || xml_doc.xml == '') {
+                            xml_doc = DEXTTOP.DEXT5.util.stringToXML(xhr_config.responseText);
+                        }
+
+                        if (xml_doc == null || xml_doc.xml == '') {
+                            alert("ErrCode : 1003");
+
+                        } else {
+                            setEmoticon(xml_doc);
+                        }
+
+                    }
+                    else if (xhr_config.status == 404) {
+                        if (DEXTTOP.G_CURREDITOR._config.setEmoticonObject) {
+                            setEmoticon('');
+                        } else {
+                            alert("ErrCode : 1003");
+                        }
+                    }
+                }
+            };
+            xhr_config.open("GET", _config_url + "?t=" + (new Date).getTime(), false);
+            xhr_config.send(null);
+
+            if (LayerDoc.compatMode == "BackCompat") {
+                var inputs = document.getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    if (inputs[i].type == 'text') {
+                        inputs[i].style.height = '20px';
+                    }
+                }
+            }
+
+            var first_tab_1 = document.getElementById('tab_emoticon_1');
+            setCursorPos(first_tab_1, false, false);
+            LayerWin.setFocusFirstAndLast(document, first_tab_1);
+        }
+
+        function setEmoticon(xml_data) {
+            var set_cnt = DEXTTOP.DEXT5.util.xml.count(xml_data, "items");
+            var _emoticon = {};
+
+            // 이모티콘 추가할 수 있는 설정값 추가
+            var emoticon_obj = DEXTTOP.G_CURREDITOR._config.setEmoticonObject;
+            var emoticon_obj_cnt = 0;
+            var emoticon_obj_key = [];
+            for (var key in emoticon_obj) {
+                emoticon_obj_cnt++;
+                emoticon_obj_key.push(key);
+            }
+
+            var _item_set, _temp_a, _temp_img, _temp_url, _temp_alt, _max_recent_cnt, _use_recent, _fixWidth;
+            var _recent_arr = [];
+
+            var util = {
+                setRootPath: function (url) {
+                    if (url.toLowerCase().indexOf("http:") == 0 || url.toLowerCase().indexOf("https:") == 0) {
+
+                    } else if (url.toLowerCase().indexOf("/") == 0) {
+
+                    } else {
+                        url = DEXTTOP.DEXT5.rootPath + url;
+                    }
+                    return url;
+                }
+            };
+
+            // 최근 사용한 이모티콘 추가 by dahyun 
+            if (DEXTTOP.DEXT5.browser.LocalStorageSupported) {
+                var getEmotionList = DEXTTOP.DEXTWIN.localStorage['dext_' + DEXTTOP.G_CURREDITOR.ID + '_emotion_list'];
+                if (getEmotionList != null && getEmotionList != undefined) {
+                    var _tempArr = getEmotionList.split('|');
+                    var b = '';
+                    var p_b = '';
+                    while (_tempArr.length > 0) {
+                        var data = DEXTTOP.DEXT5.util.stringToJson(_tempArr[_tempArr.length - 1]);
+                        b = data.b ? data.b : b;
+                        p_b = data.p_b ? data.p_b : p_b;
+                        var obj = {};
+                        var s = G_RECENT_EMOTICON.basePlusUrl(b, data.s);
+                        if (s != '' && s !== undefined) {
+                            obj.s = s;
+                        }
+                        var p_s = G_RECENT_EMOTICON.basePlusUrl(p_b, data.p_s);
+                        if (p_s != '' && p_s !== undefined) {
+                            obj.p_s = p_s;
+                        }
+                        _recent_arr.push(obj);
+                        _tempArr.pop();
+                    };
+                }
+            }
+
+            // xml데이터로 만들어지도록 수정
+            var contents_div = document.createElement('div');
+            contents_div.className = 'EdiTor_Popup_contents view';
+            var contents_btn = document.createElement('div');
+            contents_btn.className = 'con_btn';
+            contents_btn.id = 'con_btn';
+            if (DEXTTOP.DEXT5.browser.ie && DEXTTOP.DEXT5.browser.ieVersion < 8) {
+                contents_btn.style.display = 'block';
+            }
+            var contens = document.createElement('div');
+            contens.className = 'contents';
+            var div = document.createElement('div');
+            div.className = 'con';
+
+            contents_div.appendChild(contents_btn);
+            contents_div.appendChild(contens);
+            contens.appendChild(div);
+            /////////////////////////////////////////////////////
+
+            var SetEmoticonTab = function (type, _isRecent) {
+                try {
+                    var contents_tab, contents_span, contents_img;
+                    contents_tab = document.createElement('a');
+                    contents_tab.id = 'tab_emoticon_' + (_set_step + 1);
+                    var tab_img_url = '';
+                    var tab_name = '';
+                    if (type == 'xml') {
+                        tab_img_url = _item_set.getAttribute('tab_img') ? _item_set.getAttribute('tab_img') : '';
+                        tab_name = _item_set.getAttribute('tab_name') ? _item_set.getAttribute('tab_name') : '';
+                    } else {
+                        tab_name = emoticon_obj_key[_set_step];
+                    }
+
+                    if (_isRecent == '1') {
+                        _use_recent = true;
+                        if (DEXTTOP.DEXT5.util.stringTypeIsEmpty(tab_img_url) && DEXTTOP.DEXT5.util.stringTypeIsEmpty(tab_name)) {
+                            tab_img_url = 'images/editor/emoticon/tab/emo_recent.png';
+                            tab_name = LayerWin.dext5_lang.emoticon_alt.recent_tab;
+                        } else if (DEXTTOP.DEXT5.util.stringTypeIsEmpty(tab_name)) {
+                            tab_name = LayerWin.dext5_lang.emoticon_alt.recent_tab;
+                        }
+                    }
+
+                    if (DEXTTOP.DEXT5.util.stringTypeIsEmpty(tab_name)) {
+                        var _temp_set_step = _use_recent ? _set_step - 1 : _set_step;
+                        if (_temp_set_step == 0) {
+                            tab_name = LayerWin.dext5_lang.emoticon_alt.tab1;
+                        } else if (_temp_set_step == 1) {
+                            tab_name = LayerWin.dext5_lang.emoticon_alt.tab2;
+                        } else {
+                            tab_name = 'Tab' + (_temp_set_step + 1);
+                        }
+                    }
+
+                    if (tab_img_url != '') {
+                        contents_img = document.createElement('img');
+                        contents_img.id = 'img_emotion' + (_set_step + 1);
+                        contents_img.src = util.setRootPath(tab_img_url);
+                        contents_img.alt = tab_name;
+                        contents_img.title = tab_name;
+                        contents_img.style.width = '20px';
+                        contents_img.style.marginBottom = '2px';
+                        contents_tab.appendChild(contents_img);
+                    } else {
+                        contents_span = document.createElement('span');
+                        contents_span.id = 'span_emotion' + (_set_step + 1);
+                        contents_span.innerHTML = tab_name;
+                        //if (_item_set) {
+                            
+                            //if (_item_set.getAttribute("tab_name") && type == 'xml') {
+                            //    contents_span.innerHTML = tab_name;
+                            //}
+                       // }
+                        contents_tab.appendChild(contents_span);
+                    }
+
+
+                    //if (type == 'script') {
+                    //    contents_span.innerHTML = emoticon_obj_key[_set_step];
+                    //}
+
+
+                    contents_tab.href = 'javascript:popup_toggle(' + (_set_step + 1) + ');';
+
+                    if (_set_step == 0) {
+                        contents_tab.className = 'on';
+                    } else {
+                        contents_tab.className = 'off';
+                        _ul.style.display = 'none';
+                    }
+                    contents_btn.appendChild(contents_tab);
+                    div.appendChild(_ul);
+                } catch (e) { }
+            };
+
+            var SetEmoticonItem = function () {
+                try {
+                    _item = document.createElement("li");
+                    _item.style.border = "1px solid #ffffff";
+                    if (DEXTTOP.DEXT5.browser.ie && DEXTTOP.DEXT5.browser.ieVersion < 8) {
+                        _item.style.overflow = 'visible';
+                    }
+
+                    _temp_a = document.createElement('a');
+                    _temp_a.href = 'javascript:;';
+
+                    _temp_a.className = 'popupImoticonSize';
+
+                    _temp_img = document.createElement("img");
+
+                    // xml에 Full URL 지정 가능하도록
+                    // "/"로 시작하거나 http,https 로 시작 하는 경우 rootPath를 +하지 않는다.
+                    // 최근 사용한 이모티콘 추가 by dahyun 
+                    if (_emoticon) {
+                        var existPreview = false;
+                        if (_emoticon.previewSrc && _emoticon.previewSrc != undefined) {
+                            _emoticon.previewSrc = util.setRootPath(_emoticon.previewSrc);
+                            existPreview = true;
+                        }
+                        if (_emoticon.src && _emoticon.src != undefined) {
+                            _emoticon.src = util.setRootPath(_emoticon.src);
+                            _temp_url = _emoticon.src;
+                        }
+                        if (existPreview) {
+                            _temp_url = _emoticon.previewSrc;
+                            if (_emoticon.src) {
+                                _temp_img.setAttribute('dext_src', _emoticon.src);
+                            }
+                        }
+                    }
+
+                    _temp_img.src = _temp_url;
+
+                    if (_temp_alt == null) {
+                        _temp_alt = getEmoticonNameValue(_temp_url);
+                    }
+                    _temp_img.alt = _temp_alt;
+                    _temp_img.title = _temp_alt;
+
+                    _temp_img.style.border = '0';
+
+                    if (_fixWidth != '' && _fixWidth != undefined) {
+                        _temp_img.style.width = _fixWidth;
+                    }
+
+                    _temp_a.appendChild(_temp_img);
+
+                    _item.appendChild(_temp_a);
+                    _ul.appendChild(_item);
+
+                    /////////////event///////////////////////////
+                    var click_func = function (_temp_a, _temp_img) {
+                        var _image_url, _image_alt, _imge_width, _imge_height;
+
+                        //_image_url = _temp_img.src;
+                        // 최근 사용한 이모티콘 추가 by dahyun 
+                        var realSrc = _temp_img.getAttribute('dext_src');
+                        var previewSrc = _temp_img.src;
+                        if (realSrc) {
+                            _image_url = realSrc;
+                        } else {
+                            _image_url = previewSrc;
+                        }
+                        _image_alt = _temp_img.alt;
+                        _imge_width = _temp_img.width;
+                        _imge_height = _temp_img.height;
+
+                        if (!!_image_url && _image_url.length > 0) {
+                            if (_image_url != null && _image_url != undefined) {
+                                // url 앞에 특수 문자로 인해 이미지가 정상적으로 보이지 않는 현상 수정 by hyeokjoo 22.11.02 (한화손해보험)
+                                _image_url = web_url_remove_char(_image_url);
+                            }
+
+                            // 최근 사용한 이모티콘 추가 by dahyun 
+                            if (_use_recent) {
+                                var targetIdx = -1;
+                                var i = 0;
+
+                                _recent_arr.reverse();
+                                if (_recent_arr.length == 0) {
+                                    _recent_arr.push({ s: realSrc, p_s: previewSrc });
+                                } else {
+                                    while (true) {
+                                        var _target = _recent_arr[i];
+                                        targetIdx = G_RECENT_EMOTICON.sameUrlIndex(_target, previewSrc, realSrc);
+                                        if (targetIdx > -1) {
+                                            _recent_arr.splice(i, 1);
+                                            _recent_arr.push({ s: realSrc, p_s: previewSrc, a: _image_alt });
+                                            break;
+                                        } else if (i < _recent_arr.length) {
+                                            i++;
+                                        } else {
+                                            _recent_arr.push({ s: realSrc, p_s: previewSrc });
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (_recent_arr.length > _max_recent_cnt) {
+                                    _recent_arr.shift();
+                                }
+                            }
+
+                            event_dext_emoticon_completed(_image_url, _image_alt, _imge_width, _imge_height, _recent_arr);
+                        }
+                    };
+                    var click_event = (function (_temp_a, _temp_img) { return function (event) { click_func(_temp_a, _temp_img); DEXTTOP.DEXT5.util.stopEvent(event); } })(_temp_a, _temp_img);
+                    DEXTTOP.DEXT5.util.addEvent(_temp_a, "click", click_event);
+
+                    var mouseover_func = function (_item) {
+                        _item.style.borderColor = "#e24b1c";
+                    };
+                    var mouseover_event = (function (_item) { return function (event) { mouseover_func(_item); DEXTTOP.DEXT5.util.stopEvent(event); } })(_item);
+                    DEXTTOP.DEXT5.util.addEvent(_item, "mouseover", mouseover_event);
+                    DEXTTOP.DEXT5.util.addEvent(_temp_a, "focus", mouseover_event);
+
+                    var mouseout_func = function (_item) {
+                        _item.style.borderColor = "#ffffff";
+                    };
+                    var mouseover_event = (function (_item) { return function (event) { mouseout_func(_item); DEXTTOP.DEXT5.util.stopEvent(event); } })(_item);
+                    DEXTTOP.DEXT5.util.addEvent(_item, "mouseout", mouseover_event);
+                    DEXTTOP.DEXT5.util.addEvent(_temp_a, "blur", mouseover_event);
+
+                    var focus_move_event = (function (_ul, _set_step, _item_step) {
+                        return function (event) {
+                            var keyCode = ('which' in event) ? event.which : event.keyCode;
+                            var Key_Arrow_Left = 37;
+                            var Key_Arrow_Up = 38;
+                            var Key_Arrow_Right = 39;
+                            var Key_Arrow_Down = 40;
+                            var Key_Tab = 9;
+
+                            function move_next_a_tag_li(ul_arr, _set_step, _item_step, index) {
+                                if (ul_arr[_set_step].getElementsByTagName('li')[_item_step + index]) {
+                                    if (ul_arr[_set_step].getElementsByTagName('li')[_item_step + index].getElementsByTagName('a')[0]) {
+                                        ul_arr[_set_step].getElementsByTagName('li')[_item_step + index].getElementsByTagName('a')[0].focus();
+                                    }
+                                    DEXTTOP.DEXT5.util.cancelEvent(event);
+                                }
+                            }
+
+                            if (keyCode == Key_Arrow_Left) {
+                                move_next_a_tag_li(_ul, _set_step, _item_step, -1);
+                            } else if (keyCode == Key_Arrow_Right) {
+                                move_next_a_tag_li(_ul, _set_step, _item_step, 1);
+                            } else if (!event.ctrlKey && keyCode == Key_Arrow_Up) {
+                                move_next_a_tag_li(_ul, _set_step, _item_step, -13);
+                            } else if (!event.ctrlKey && keyCode == Key_Arrow_Down) {
+                                move_next_a_tag_li(_ul, _set_step, _item_step, 13);
+                            } else if (event.ctrlKey && keyCode == Key_Arrow_Up) {
+                                setCursorPos(document.getElementById('tab_object_' + (_set_step + 1)), false, false);
+                                DEXTTOP.DEXT5.util.cancelEvent(event);
+                            } else if (event.ctrlKey && keyCode == Key_Arrow_Down) {
+                                setCursorPos(document.getElementById('btn_cancel'), false, false);
+                                DEXTTOP.DEXT5.util.cancelEvent(event);
+                            }
+                        }
+                    })(_ul, _set_step, _item_step);
+                    DEXTTOP.DEXT5.util.addEvent(_temp_a, "keydown", focus_move_event);
+                } catch (e) {}
+            }
+
+            if (emoticon_obj_cnt > 0) {
+                for (var _set_step = 0; _set_step < emoticon_obj_key.length; _set_step++) {
+                    var _ul = document.createElement('ul');
+                    _ul.className = 'emoticon';
+                    _ul.id = 'ul_' + (_set_step + 1);
+
+                    SetEmoticonTab('script');
+
+                    var obj_item_cnt = emoticon_obj[emoticon_obj_key[_set_step]][0].item.length;
+                    for (var j = 0; j < obj_item_cnt; j++) {
+                        _temp_alt = emoticon_obj[emoticon_obj_key[_set_step]][0].item[j].title;
+                        _emoticon.src = emoticon_obj[emoticon_obj_key[_set_step]][0].item[j].url;
+                        SetEmoticonItem();
+                    }
+                }
+            } else {
+                _fixWidth = DEXTTOP.DEXT5.util.xml.getNode(xml_data, "emoticons").getAttribute('fix_width');
+
+                for (var _set_step = 0; _set_step < set_cnt; _set_step++) {
+                    _item_set = DEXTTOP.DEXT5.util.xml.getNodeIdx(xml_data, "items", _set_step);
+
+                    var item_cnt = DEXTTOP.DEXT5.util.xml.count(_item_set, "item");
+                    
+                    var _ul = document.createElement('ul');
+                    _ul.className = 'emoticon';
+                    _ul.id = 'ul_' + (_set_step + 1);
+
+                    var isRecent = _item_set.getAttribute("recent");
+                    SetEmoticonTab('xml', isRecent);
+                    
+                    if (isRecent == '1') {
+                        var i = 0;
+                        _max_recent_cnt = _item_set.getAttribute("max_cnt") ? _item_set.getAttribute("max_cnt") : 50;
+
+                        if (_recent_arr.length == 0) {
+                            var parent = _ul.parentNode;
+                            var _div = document.createElement('div');
+                            _div.innerHTML = '<p>' + LayerWin.dext5_lang.emoticon.empty_data + '</p>';
+                            _div.id = _ul.id;
+                            _div.className = 'emoticon empty_data';
+                            _div.style.display = _ul.style.display;
+                            parent.replaceChild(_div, _ul);
+                        } else {
+                            if (_recent_arr.length >= _max_recent_cnt) {
+                                _recent_arr = _recent_arr.slice(0, _max_recent_cnt);
+                            }
+
+                            while (i < _recent_arr.length) {
+                                _emoticon.src = _recent_arr[i].s;
+                                _emoticon.previewSrc = _recent_arr[i].p_s;
+                                _temp_alt = _recent_arr[i].a;
+
+                                SetEmoticonItem();
+                                i++;
+                            }
+                        }
+                    } else {
+                        for (var _item_step = 0; _item_step < item_cnt; _item_step++) {
+                            _temp_alt = '';
+                            _temp_alt = DEXTTOP.DEXT5.util.xml.getNodeIdx(_item_set, "item", _item_step).getAttribute("alt") == null ? DEXTTOP.DEXT5.util.xml.getNodeIdx(_item_set, "item", _item_step).getAttribute("title") : '';
+                            _emoticon.src = DEXTTOP.DEXT5.util.xml.getNodeValueIdx(_item_set, "item", _item_step);
+                            _emoticon.previewSrc = DEXTTOP.DEXT5.util.xml.getNodeIdx(_item_set, "item", _item_step).getAttribute("preview_url");
+
+                            SetEmoticonItem();
+                        }
+                    }
+                }
+            }
+            document.getElementById("dext_dialog_box").insertBefore(contents_div, document.getElementById('emoticon_footer'));
+
+            if (_set_step > 2) {
+                var tab_width = 0;
+                var base_width = 64;
+                if (DEXTTOP.DEXT5.browser.ie && DEXTTOP.DEXT5.browser.ieVersion < 8) {
+                    base_width = 74;
+                }
+                for (var i = 0; i < _set_step; i++) {
+                    tab_width += contents_btn.children[i].offsetWidth;
+                }
+
+                if (document.getElementById('dext_dialog_box').offsetWidth < tab_width + base_width) {
+                    document.body.style.width = tab_width + base_width + 'px';
+                    document.getElementById('dext_dialog_box').style.width = tab_width + base_width + 'px';
+                }
+            }
+        }
+
+        function getEmoticonNameValue(str_url) {
+            var strAlt = "";
+
+            var arrStr = str_url.split('/');
+
+            try {
+                arrStr = arrStr[arrStr.length - 1];
+                arrStr = arrStr.split('.');
+                strAlt = arrStr[0];
+                strAlt = LayerWin.dext5_lang.emoticon_alt[strAlt];
+            } catch (e) { }
+
+            if (strAlt == undefined) strAlt = arrStr[0] ? arrStr[0] : "";
+            return strAlt;
+
+        }
+
+        function popup_toggle(index) {
+            if (document.getElementById('con_btn').childNodes[index - 1].className == 'on') {
+                return;
+            }
+
+            var popTap = document.getElementById('con_btn').childNodes;
+            for (var i = 0; popTap.length > i; i++) {
+                if (popTap[i].className == "on") {
+                    popTap[i].className = "off";
+                    document.getElementById('ul_' + (i + 1)).style.display = 'none';
+                }
+            }
+
+            popTap[index - 1].className = "on";
+            var ul = document.getElementById('ul_' + index);
+            ul.style.display = '';
+            setCursorPos(ul.getElementsByTagName('a')[0], false, false);
+            LayerWin.setFocusFirstAndLast(document, ul.getElementsByTagName('a')[0]);
+        }
+    </script>
+</head>
+<body style="margin:0px; padding:0px;" onload="page_loaded_event(); page_dialog_loaded_event();">
+    <div id="dext_dialog_box" class="editor_popup">
+        <!-- Header -->
+        <div class="EdiTor_Popup_header">
+            <span id="span_title" class="subject">이모티콘</span><span class="text">DEXT5 Editor</span>
+            <div class="close">
+                <a href="javascript:event_dext_emoticon_cancel();" title="close"></a>
+            </div>
+        </div>
+        <!-- // Header -->
+        <!-- Contents / emotion -->
+        <!--<div class="EdiTor_Popup_contents view">
+            <div class="con_btn">
+                <a href="javascript:void(0);" id="tab_emoticon_1" class="on" ><span id="span_emotion_1"></span></a> 
+                <a href="javascript:popup_toggle();" id="tab_object_1" class="off"><span id="span_object_1"></span></a>
+            </div>
+            <div class="contents">
+                <div class="con">
+                    <ul class="emoticon" id="ul_0">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="EdiTor_Popup_contents none">
+            <div class="con_btn">
+                <a href="javascript:popup_toggle();" id="tab_emoticon_2" class="off" ><span id="span_emotion_2">감정</span></a> 
+                <a href="javascript:void(0);" id="tab_object_2" class="on"><span id="span_object_2">사물</span></a>
+            </div>
+            <div class="contents">
+                <div class="con">
+                    <ul class="emoticon" id="ul_1">
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+        <!-- Contents / object -->
+        
+        <!-- // Contents -->
+        <!-- Footer -->
+        <div class="EdiTor_Popup_footer" id="emoticon_footer">
+            <a id="btn_cancel" href="javascript:event_dext_emoticon_cancel();" class="cancel"><span id="span_cancel">취소</span></a>
+        </div>
+        <!-- // Footer -->
+    </div>
+</body>
+</html>

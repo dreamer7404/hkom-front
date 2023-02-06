@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: UseHorizontalLine</h3>
+    <p class="ttl">XML : &#60;use_horizontal_line&#62;.....&#60;/use_horizontal_line&#62;<br />
+        XML : &#60;use_horizontal_line url="....."&#62;&#60;/use_horizontal_line&#62;, Config : config.UseHorizontalLine<br />
+        XML : &#60;use_horizontal_line height="....."&#62;&#60;/use_horizontal_line&#62;, Config : config.UseHorizontalLineHeight<br />
+        XML : &#60;use_horizontal_line style="....."&#62;&#60;/use_horizontal_line&#62;, Config : config.UseHorizontalLineStyle<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        <span class="txt">
+            <span class="firebrick">use_horizontal_line</span>&nbsp;&nbsp;기준선 표시 사용여부를 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">url</span>&nbsp;&nbsp;기준선 이미지 경로를 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">height</span>&nbsp;&nbsp;에디터 자체 가로 기준선의 사용여부를 설정합니다. (사용시 url의 이미지는 설정하여도 적용되지 않습니다.)
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">style</span>&nbsp;&nbsp;UseHorizontalLineHeight="1"로 설정시 적용되며, 기준선의 style(CSS)를 설정합니다.
+        </span>
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        url에 적용된 이미지에 따라 가로 또는 세로선으로 커스텀이 가능합니다.<br />
+        ex)1000x1 하얀배경 이미지 가로 300px 위치에 1px점 하나를 찍으면 300px마다 세로선으로 표현됩니다. <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;1x150 하얀배경 이미지 맨 아래에 1px점 하나를 찍으면 150px마다 가로선으로 표현됩니다. <br />
+        <br />
+        <span class="txt">
+            <span class="firebrick">use_horizontal_line</span>&nbsp;&nbsp;"0" 으로 설정 시 사용 안함, "1"로 설정 시 가로, 세로 기준선 표시 사용으로 설정합니다. 
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">url</span>&nbsp;&nbsp;http://를 포함한 전체 이미지 경로를 콤마(,)로 구분하여 입력합니다. 
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">height</span>&nbsp;&nbsp;기본값은 "0"으로 설정 시 사용 안함, "1"로 설정 시 url에 설정된 이미지가 아닌 에디터 자체 가로 기준선을 표시합니다. 
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">style</span>&nbsp;&nbsp;height "1"로 설정시 적용되며, 에디터 자체 기준선의 lineStyle CSS를 설정합니다. (기본값은 ""으로 1px dotted red가 적용됩니다.)
+        </span>
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>세로 기준선 표시 사용여부를 사용으로 설정합니다.</b>
+<b>기준선 이미지 경로를 http://www.dext5.com/custom_horizontal_line.png 으로 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;use_horizontal_line url="http://www.dext5.com/custom_horizontal_line.png"&#62;1&#60;/use_horizontal_line&#62;
+    &#60;!-- 에디터 자체 가로 기준선을 사용하시려면 다음과 같이 설정합니다. (예시:100px마다 3px dotted rgb(50,100,140)로 표시) --&#62;
+    &#60;!--&#60;use_horizontal_line height="100" style="3px dotted rgb(50,100,140)"&#62;1&#60;/use_horizontal_line&#62;--&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+        
+        DEXT5.config.UseHorizontalLine = "http://www.dext5.com/custom_horizontal_line.png";
+        
+        /*
+        //에디터 자체 가로 기준선을 사용하시려면 다음과 같이 설정합니다. (예시:100px마다 3px dotted rgb(50,100,140)로 표시)
+        DEXT5.config.UseHorizontalLineHeight = "100";
+        DEXT5.config.UseHorizontalLineStyle = "3px dotted rgb(50,100,140)";       
+        */
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

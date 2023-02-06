@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: SetDefaultTagInEmptyCell</h3>
+    <p class="ttl">XML : &#60;set_default_tag_in_empty_cell&#62;.....&#60;/set_default_tag_in_empty_cell&#62;,<br /> Config : config.SetDefaultTagInEmptyCell<br /></p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        셀을 마우스 클릭 또는 셀로 키보드 커서 이동 시 빈 셀에 p태그를 삽입합니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        기본값은 "0"으로 셀에 마우스클릭 및 키보드 커서 이동 시 P태그 삽입 안함,<br />
+        "1"로 설정 시 셀에 마우스클릭 및 키보드 커서 이동 시 P태그를 삽입합니다.
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>셀을 마우스 클릭 또는 셀로 키보드 커서 이동 시 빈 셀에 p태그를 삽입합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;table_property&#62;
+        .....
+        &#60;set_default_tag_in_empty_cell&#62;1&#60;/set_default_tag_in_empty_cell&#62;
+        .....
+    &#60;/table_property&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;  
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.SetDefaultTagInEmptyCell = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

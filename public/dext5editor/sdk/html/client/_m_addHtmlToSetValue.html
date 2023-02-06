@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: addHtmlToSetValue</h3>
+    <p class="ttl">void addHtmlToSetValue(html, preOrSub, editor_id)</p>
+    <p class="txt">
+        에디터에 set 하는 API를 사용할때 내용의 앞 또는 뒤에 파라미터의 html 소스를 추가하도록 설정합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.<br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">html</span>&nbsp;&nbsp;앞 또는 뒤에 추가할 html 소스를 의미합니다.<br />
+        <span class="firebrick">preOrSub</span>&nbsp;&nbsp;추가할 위치를 의미합니다. (0 : 앞, 1 : 뒤)<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;API를 적용할 에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_editor_loaded_event() {
+        var html = '&#60;p&#62;Hi, DEXT5 Editor!!&#60;/p&#62;';
+        
+        // id가 editor1인 에디터가 set API를 사용하면 입력하는 소스의 앞쪽에 html의 내용을 추가합니다.
+        DEXT5.addHtmlToSetValue(html, 0, 'editor1');
+    }
+
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

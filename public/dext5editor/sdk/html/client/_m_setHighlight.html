@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">            
+    <h3 class="title">DEXT5 Editor :: setHighlight</h3>
+    <p class="ttl">void setHighlight(option, editor_id)</p>
+    <p class="txt">
+        에디터 작성영역의 찾을 text를 찾아서 highlight를 적용 또는 해제합니다. <br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">option</span>&nbsp;&nbsp;highlight를 적용 또는 해제 및 찾을 text를 설정합니다. { searchText : "찾을 단어", addOrRemove : "하이라이트 적용 여부"}<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다. <br />
+    </p>
+    <p class="mttl01">remarks</p>  
+    <p class="txt">
+        에디터 설정파일(dext5editor/config/dext_editor.xml)의 <b>highlight.color</b>가 1이어야 동작합니다. <br />
+        option.addOrRemove 값이 "add"이면 적용, "remove"이면 해제합니다.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5Set(){
+        var option = {
+            searchText : "DEXT5",
+            addOrRemove : "add"
+        };
+        // id가 editor1인 에디터 작성영역의 option.searchText를 전부 찾아서 Highlight를 적용합니다.
+        DEXT5.setHighlight(option, 'editor1');
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

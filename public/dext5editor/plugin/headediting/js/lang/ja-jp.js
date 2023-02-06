@@ -1,0 +1,1 @@
+(function(){var a={icon:{p_headediting:"Editing head"},title:"Editing head",label:{sourceInput:"Input source"}};try{if(G_DEPlugin){G_DEPlugin.headediting.lang=a;dext5_lang.plugins.headediting=a;var b=document.getElementById("ue_"+DEXTTOP.G_CURREDITOR.ID+"p_headediting");b&&b.setAttribute("title",a.icon.p_headediting)}}catch(c){}})();

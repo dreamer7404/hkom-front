@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">             
+    <h3 class="title">DEXT5 Editor :: HyperlinkProperty</h3>
+    <p class="ttl">XML : &#60;category&#62;.....&#60;/category&#62;, Config : config.HyperLinkCategoryList<br />
+        XML : &#60;click_ctrl_hyperlink&#62;.....&#60;/click_ctrl_hyperlink&#62;, Config : config.ClickCtrlHyperlink<br/>
+        XML : &#60;protocol&#62;.....&#60;/protocol&#62;, Config : config.HyperLinkProtocolList<br/>
+        XML : &#60;target&#62;.....&#60;/target&#62;, Config : config.HyperLinkTargetList<br/>
+        XML : &#60;target basic_list="....."&#62;&#60;/target&#62;, Config : config.HyperlLinkTargetBasicList<br/>
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        하이퍼링크 삽입 다이얼로그 및 하이퍼링크 속성을 설정합니다.<br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">category</span>&nbsp;&nbsp;하이퍼링크 category를 콤마(,)로 구분하여 설정합니다. (hyperlink,bookmark,image 등) <br />
+        <span class="firebrick">click_ctrl_hyperlink</span>&nbsp;&nbsp;기본값은 "0" 이고 사용 안함, "1"로 설정 시 디자인 모드에서 하이퍼링크를 Ctrl + 클릭하면 바로 이동하도록 설정합니다. <br />
+        <span class="firebrick">protocol</span>&nbsp;&nbsp;하이퍼링크 클릭시 프로토콜을 콤마(,)로 구분하여 설정합니다.(http://,https://,file:///,ftp://,gopher://,telnet://,wais://,mailto:,news: 등)<br />
+        <span class="firebrick">target</span>&nbsp;&nbsp;하이퍼링크 다이얼로그의 대상프레임 항목 콤보박스에 임의의 value를 콤마(,)로 구분하여 추가합니다.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(해당 내용으로 설정시 생성한 하이퍼링크의 target에 해당 value가 적용됩니다.) <br />
+        <span class="firebrick">target@basic_list</span>&nbsp;&nbsp;하이퍼링크 다이얼로그의 대상프레임 항목 콤보박스에 기본항목을 콤마(,)로 구분하여 설정합니다. <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>하이퍼링크 삽입 다이얼로그 및 하이퍼링크 속성을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;hyperlink_property&#62;
+        &#60;category&#62;hyperlink,bookmark,image&#60;/category&#62;
+        &#60;click_ctrl_hyperlink&#62;1&#60;/click_ctrl_hyperlink&#62;
+        &#60;protocol&#62;http://,https://,file:///,ftp://,gopher://,telnet://,wais://,mailto:,news:&#60;/protocol&#62;
+        &#60;target basic_list="blank,self,top,parent"&#62;_blank&#60;/target&#62;
+    &#60;/hyperlink_property&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.HyperLinkCategoryList = "hyperlink,bookmark,image";
+        DEXT5.config.ClickCtrlHyperlink = "1";
+        DEXT5.config.HyperLinkProtocolList = "http://,https://,file:///,ftp://,gopher://,telnet://,wais://,mailto:,news:";
+        DEXT5.config.HyperLinkTargetList = "_blank";
+        DEXT5.config.HyperlLinkTargetBasicList = "blank,self,top,parent";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

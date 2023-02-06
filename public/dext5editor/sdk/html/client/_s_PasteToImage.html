@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <span class="pl_type">[플러그인 전용]</span>  
+    <h3 class="title">DEXT5 Editor :: PasteToImage</h3>
+    <p class="ttl">XML : &#60;paste_to_image&#62;.....&#60;/paste_to_image&#62; Config : config.PasteToImage<br />
+        XML : &#60;paste_to_image excel_image_fix="....."&#62;&#60;/paste_to_image&#62; Config : config.ExcelImageFix<br />
+        XML : &#60;paste_to_image popup_mode="....."&#62;&#60;/paste_to_image&#62; Config : config.PasteToImagePopupMode<br />
+        XML : &#60;paste_to_image type="....."&#62;&#60;/paste_to_image&#62; Config : config.PasteToImageType<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터 이미지로 붙여넣기 사용여부 및 각종 항목을 설정합니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">paste_to_image</span>&nbsp;&nbsp; 기본값은 "1" 이고 기본 붙여넣기에 이미지로 붙여넣기를 설정, "0" 으로 설정 시 우클릭 이미지로 붙여넣기 항목을 설정합니다.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        "1" 로 설정시 이미지로 붙여넣기 다이얼로그를 사용, "0" 으로 설정 시 이미지로 붙여넣기 다이얼로그를 사용하지 않습니다. <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        "2" 로 설정시 우클릭 context 및 붙여넣기창을 모두 활성화 합니다.<br />
+        <span class="firebrick">paste_to_image@excel_image_fix</span>&nbsp;&nbsp;엑셀 이미지 붙여넣기 시 테이블 일부 테두리가 회색으로 나오는 경우 보정 처리하도록 설정합니다. <br />
+        <span class="firebrick">paste_to_image@popup_mode</span>&nbsp;&nbsp;이미지 붙여넣기시 팝업창을 설정합니다. (0=너비/높이 등 크기만 조절 가능, 1=회전, 포맷 등 다양한 설정 가능)<br />
+        <span class="firebrick">paste_to_image@type</span>&nbsp;&nbsp;이미지로 붙여넣기 시 png, jpg로 붙여넣기를 설정합니다. (콤마(,)로 구분하여 입력합니다.)<br />
+
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 이미지로 붙여넣기 사용여부 및 각종 항목을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;paste_to_image excel_image_fix="1" popup_mode="1" type="png,jpg"&#62;1&#60;/paste_to_image&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;  
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.PasteToImage = "1";
+        DEXT5.config.ExcelImageFix = "1";
+        DEXT5.config.PasteToImagePopupMode = "1";
+        DEXT5.config.PasteToImageType = "png,jpg";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

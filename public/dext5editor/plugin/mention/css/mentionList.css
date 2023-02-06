@@ -1,0 +1,31 @@
+.mentionContainer {
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: white;
+    cursor: default;
+}
+.mList {
+    font-family: '맑은 고딕';
+    font-size: 10pt;
+    padding: 1px 2px 1px 4px;
+    vertical-align: middle;
+}
+
+.mList:hover {
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.mListSelected {
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.mentionBody {
+    min-height: 20px;
+}
+
+.mentionFooter {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

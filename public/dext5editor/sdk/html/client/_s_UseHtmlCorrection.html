@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: UseHtmlCorrection</h3>
+    <p class="ttl">XML : &#60;use_html_correction&#62;.....&#60;/use_html_correction&#62;, Config : config.UseHtmlCorrection<br />
+        XML : &#60;use_html_correction limit_length="....."&#62;&#60;/use_html_correction&#62;,<br /> Config : config.HtmlCorrectionLimitLength<br />
+        XML : &#60;use_html_correction remove_incorrect_attribute="....."&#62;&#60;/use_html_correction&#62;,<br /> Config : config.RemoveIncorrectAttribute<br />
+        XML : &#60;use_html_correction replace_space="....."&#62;&#60;/use_html_correction&#62;, Config : config.ReplaceSpace<br />
+        XML : &#60;use_html_correction skip_tag="....."&#62;&#60;/use_html_correction&#62;, Config : config.SkipTagInParser
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        set API 사용시 htmlparser로직(사용)의 실행 여부 및 parser의 동작을 설정합니다.<br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">use_html_correction</span>&nbsp;&nbsp;기본값은 "1" 이며 set API 사용시 htmlparser로직(사용) 실행, "0" 으로 설정 시 실행하지 않습니다. <br />
+        <span class="firebrick">limit_length</span>&nbsp;&nbsp;기본값은 450000이며 html의 길이 제한을 설정합니다. (메모리 부족 오류 시 브라우저가 닫혀버리는 현상을 방지가능합니다.)<br />
+        <span class="firebrick">remove_incorrect_attribute</span>&nbsp;&nbsp;기본값은 "0" 이며 사용안함, "1" 로 설정시 올바르지 않은 속성값을 pareser에서 삭제하도록 설정합니다.<br />
+        <span class="firebrick">replace_space</span>&nbsp;&nbsp;기본값은 "0" 이며 사용안함, "1" 로 설정시 parser에서 공백 2개를 <b>&amp;nbsp; + 공백</b> 으로 바꾸도록 설정합니다.<br />
+        <span class="firebrick">skip_tag</span>&nbsp;&nbsp;parser에서 html 보정 시 skip할 tag를 설정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>set API 사용시 htmlparser로직(사용)의 실행 여부 및 parser의 동작을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;use_html_correction limit_length=500000 remove_incorrect_attribute="1" replace_space="0" skip_tag="h1"&#62;1&#60;/use_html_correction&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.UseHtmlCorrection = "1";
+        DEXT5.config.HtmlCorrectionLimitLength = 500000;
+        DEXT5.config.RemoveIncorrectAttribute = "1";
+        DEXT5.config.ReplaceSpace = "0";
+        DEXT5.config.SkipTagInParser = "h1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

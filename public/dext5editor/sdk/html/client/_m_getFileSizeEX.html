@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: getFileSizeEx</h3>
+    <p class="ttl">void getFileSizeEx(fileSizePath, callBackFunc, editor_id)</p>
+    <p class="txt">
+        파일경로를 배열로 받아 해당 배열 경로들의 각 파일 크기를 콤마(,)로 구분한 String값으로 callBackFunc의 첫번째 파라미터로 반환해줍니다. <br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">fileSizePath</span>&nbsp;&nbsp;파일 경로정보들을 포함한 배열을 의미합니다.<br />
+        <span class="firebrick">callBackFunc</span>&nbsp;&nbsp;실행시킬 callback function을 의미합니다.<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        callback function의 첫번째 파라미터로 각 파일 크기를 콤마(,)로 구분한 String값이 반환됩니다. <br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5GetSize(){
+        // 파일 경로들을 포함한 배열을 생성합니다.
+        var tempArr = ["D:\\temp1.txt","D:\\temp2.txt"];
+        // callback function을 설정합니다.
+        var cbf = function(filesize){
+            console.log(filesize);
+        }
+        // tempArr내의 경로들에 해당하는 각 파일 크기를 콤마(,)로 구분한 String값을 callback function의 첫번째 파라미터로 반환받습니다.
+        DEXT5.getFileSizeEx(tempArr, cbf, 'editor1');
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

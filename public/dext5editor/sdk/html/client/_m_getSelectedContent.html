@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: getSelectedContent</h3>
+    <p class="ttl">Object getSelectedContent(editor_id)</p>
+    <p class="txt">
+        에디터의 작성영역에 선택된 부분의 text와 html을 Object로 반환해줍니다. <br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        에디터 작성영역에 선택된 부분의 text와 html 정보를 담은 Object
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        return은 { text : '선택된 부분의 text' , html : '선택된 부분의 html' } 형태로 반환 합니다.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5GetCell(){
+        // id가 'editor1'인 작성영역에 선택된 부분의 text와 html을 오브젝트로 반환받습니다.
+        var dext5 = DEXT5.getSelectedContent('editor1');
+        alert(dext5.text);
+        alert(dext5.html);
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

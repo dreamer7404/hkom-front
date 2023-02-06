@@ -3,10 +3,18 @@ const SET_DIFF = 'SET_DIFF';
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
-// action function
+// 액션함수
 export const setDiff = diff => ({type: SET_DIFF, diff});
 export const increase = () => ({type: INCREASE});
 export const decrease = () => ({type: DECREASE});
+
+// 비동기 액션함수 - 미들웨어
+export const increaseAsync = () => dispatch => {
+    setTimeout(() => dispatch(increase()), 1000);
+};
+export const decreaseAsync = () => dispatch => {
+    setTimeout(() => dispatch(decrease()), 1000);
+};
 
 // initialize
 const initialState = {

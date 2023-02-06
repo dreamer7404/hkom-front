@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: DefaultBodySpace</h3>
+    <p class="ttl">XML : &#60;use_default_body_space&#62;.....&#60;/use_default_body_space&#62;, Config : config.DefaultBodySpace.Use<br />
+        XML : &#60;use_default_body_space mode="....."&#62;&#60;/use_default_body_space&#62;,<br /> Config : config.DefaultBodySpace.Mode<br />
+        XML : &#60;use_default_body_space value="....."&#62;&#60;/use_default_body_space&#62;,<br /> Config : config.DefaultBodySpace.Value<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터 작성영역의 기본 여백 사용을 설정합니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">use_default_body_space</span>&nbsp;&nbsp;기본값은 "1" 로 작성 영역 기본 여백을 사용, "0" 으로 설정 시 사용하지 않습니다.<br />
+        <span class="firebrick">mode</span>&nbsp;&nbsp;기본값은 "1" 로 여백을 margin으로 적용, "2" 로 설정 시 margin:0px 및 padding으로 적용됩니다. (value의 값이 적용됩니다.)<br />
+        <span class="firebrick">value</span>&nbsp;&nbsp;여백으로 사용될 사이즈값을 설정합니다.<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상하좌우 여백 설정을 다르게 원하시면 위,오른쪽,아래,왼쪽 순서에 맞게 콤마(,)로 구분하여 입력합니다.
+
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 작성영역의 기본 여백을 margin:"0px" padding:"30px 30px 30px 30px"로 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;use_default_body_space mode="2" value="30px"&#62;1&#60;/use_default_body_space&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;  
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.DefaultBodySpace = {
+            Use: "1",
+            Mode: "2",
+            Value: "30px"
+        };
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

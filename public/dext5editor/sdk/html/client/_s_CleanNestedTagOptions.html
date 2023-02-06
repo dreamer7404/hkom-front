@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">            
+    <h3 class="title">DEXT5 Editor :: CleanNestedTagOptions</h3>
+    <p class="ttl">XML : &#60;remove_tag&#62;.....&#60;/remove_tag&#62;, Config : config.CleanNestedTagOptions.RemoveTag<br />
+        XML : &#60;nested_count&#62;.....&#60;/remove_tag&#62;, Config : config.CleanNestedTagOptions.NestedCount
+    </p>
+    <p class="txt">
+        <b>Script 설정이 우선 적용 됩니다.</b><br />
+        중복 태그 제거 사용 시 태그 정리 기능을 설정합니다. <br />
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">remove_tag</span>&nbsp;&nbsp; 제거할 태그명을 콤마(,)로 구분하여 입력합니다. <br /> 
+        <span class="firebrick">nested_count</span>&nbsp;&nbsp; 기본값은 "50" 이며 중복된 태그 제거 기준 개수를 설정합니다.
+    </p> 
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>p,div 태그를 30개 이상 중복된 태그가 있을 경우 제거하도록 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;clean_nested_tag_options&#62;
+        &#60;remove_tag&#62;p,div&#60;/remove_tag&#62;
+        &#60;nested_count&#62;30&#60;/nested_count&#62;
+        .....
+    &#60;/clean_nested_tag_options&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.CleanNestedTagOptions.RemoveTag = "p,div";
+        DEXT5.config.CleanNestedTagOptions.NestedCount = "30";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

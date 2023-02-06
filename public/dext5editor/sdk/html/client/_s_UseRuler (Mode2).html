@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: UseRuler</h3>
+    <p class="ttl">
+        XML : &#60;use_ruler mode="2"&#62;&#60;/use_ruler&#62;, Config : config.Ruler.Mode<br />
+        XML : &#60;use_ruler move_guide_line_color="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.MoveGuideLineColor<br />
+        XML : &#60;use_ruler move_guide_line_style="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.MoveGuideLineStyle<br />
+        XML : &#60;use_ruler use_inoutdent="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.UseInoutdent<br />
+        XML : &#60;use_ruler move_gap="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.MoveGap<br />
+        XML : &#60;use_ruler use_resize_event="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.UseResizeEvent<br />
+        XML : &#60;use_ruler use_mouse_guide="....."&#62;&#60;/use_ruler&#62;, Config : config.Ruler.UseMouseGuide
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        <span class="txt">
+            <span class="firebrick">XML:mode,Config:Mode</span>&nbsp;&nbsp;눈금자의 모드를 설정합니다.
+        </span><br />
+        <b>아래 설정들은 use_ruler의 mode가 "2"일 때 적용됩니다.</b><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_guide_line_color,Config:MoveGuideLineColor</span>&nbsp;&nbsp;움직이는 가이드라인의 색상을 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_guide_line_style,Config:MoveGuideLineStyle</span>&nbsp;&nbsp;움직이는 가이드라인의 스타일을 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:use_inoutdent,Config:UseInoutdent</span>&nbsp;&nbsp;가이드라인을 움직였을때 들여쓰기 및 내어쓰기 사용 여부를 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_gap,Config:MoveGap</span>&nbsp;&nbsp;가이드라인을 움직일때 눈금자의 이동 간격을 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:use_resize_event,Config:UseResizeEvent</span>&nbsp;&nbsp;에디터 사이즈 변경시 눈금자의 위치를 다시 잡아주는 기능을 설정합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:use_mouse_guide,Config:UseMouseGuide</span>&nbsp;&nbsp;에디터 body영역에서 마우스를 움직일시 세로 눈금자에 위치를 표시하는 마우스 가이드 사용 여부를 설정합니다.
+        </span>
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="txt">
+            <span class="firebrick">XML:mode,Config:Mode</span>&nbsp;&nbsp;기본값은 "1" 이고 일반자 모드로 설정, "2"로 설정 시 가이드라인 위치 조정이 가능한 모드로 설정합니다. 
+        </span><br />
+        <b>아래 설정들은 use_ruler의 mode가 "2"일 때 적용됩니다.</b><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_guide_line_color,Config:MoveGuideLineColor</span>&nbsp;&nbsp;기본값은 #666666 입니다. (색상의 HEX, rgb 등으로 설정 가능합니다.)
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_guide_line_style,Config:MoveGuideLineStyle</span>&nbsp;&nbsp;기본값은 dotted 입니다. (border-style css값으로 설정 가능합니다.)
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:use_inoutdent,Config:UseInoutdent</span>&nbsp;&nbsp;기본값은 "1" 이고 가이드라인 조정시 들여쓰기 및 내어쓰기 사용함, "0" 으로 설정 시 사용하지 않습니다. 
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:move_gap,Config:MoveGap</span>&nbsp;&nbsp;기본값은 "1" 이고 가이드라인 조정시 눈금자의 이동 간격을 설정합니다. 
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:use_resize_event,Config:UseResizeEvent</span>&nbsp;&nbsp;기본값은 "1" 이고 에디터 사이즈 변경시 눈금자의 위치를 다시 잡도록 설정,<br /><span style="margin-left:250px;">"0" 으로 조정 안함으로 설정합니다. </span>
+        </span><br />
+               <span class="txt">
+                   <span class="firebrick">XML:use_mouse_guide,Config:UseMouseGuide</span>&nbsp;&nbsp;기본값은 "0" 이고 사용 안함, "<br /><span style="margin-left:258px;">
+                       1" 로 설정 시 에디터 body영역에서 마우스를 움직일시 세로 눈금자에 위치를 표시하도록 설정합니다.</span>
+                   </span>
+</p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>눈금자 모드를 가이드라인 위치 조정이 가능한 모드("2")로 설정합니다. </b>
+<b>가이드라인을 옮길때 움직이는 가이드라인의 색상을 #328cc8로 설정합니다.</b>
+<b>가이드라인을 옮길때 움직이는 가이드라인의 border-style을 solid로 설정합니다.</b>
+<b>가이드라인의 위치 조정시 들여쓰기 및 내어쓰기를 사용하도록 설정합니다.</b>
+<b>가이드라인의 위치 조정시 눈금자 이동 간격을 10으로 설정합니다.</b>
+<b>에디터 사이즈 변경시 눈금자의 위치를 다시 잡도록 설정합니다.</b>
+<b>에디터 body영역에서 마우스를 움직일시 세로 눈금자에 위치를 표시하도록 설정합니다. </b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;use_ruler mode="2" move_guide_line_color="#328cc8" move_guide_line_style="solid" use_inoutdent="1"
+    move_gap="10" use_resize_event="1" use_mouse_guide="1"&#62;1&#60;/use_ruler&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+        
+        DEXT5.config.Ruler = {
+            Use: '1', // 눈금자 사용
+            Mode: '2',
+            MoveGuideLineColor: '#328cc8',
+            MoveGuideLineStyle: 'solid',
+            UseInoutdent: '1',
+            MoveGap: '10',
+            UseResizeEvent: '1',
+            UseMouseGuide: '1'
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

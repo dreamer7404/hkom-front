@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">             
+    <span class="pl_type">[플러그인 전용]</span>     
+    <h3 class="title">DEXT5 Editor :: OpenDocument.PowerPoint</h3>
+    <p class="ttl">XML : &#60;powerpoint max_slide="....."&#62;&#60;/powerpoint&#62;, Config : config.OpenDocument.PowerPoint.MaxSlide <br />
+        XML : &#60;powerpoint max_size="....."&#62;&#60;/powerpoint&#62;, Config : config.OpenDocument.PowerPoint.MaxSize<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        파워포인트파일의 열기 관련 설정을 적용합니다.<br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">max_slide</span>&nbsp;&nbsp;파일 열기할 powerpoint파일의 최대 slide 수를 설정합니다. <br />
+        <span class="firebrick">max_size</span>&nbsp;&nbsp;파일 열기할 powerpoint파일의 최대 용량을 설정합니다. <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>파워포인트파일의 열기 관련 설정을 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;open_document&#62;
+        &#60;powerpoint max_slide="2", max_size="10000"&#62;&#60;/powerpoint&#62;
+    &#60;/open_document&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.OpenDocument.PowerPoint = {
+            MaxSlide : "2",
+            MaxSize : "10000",
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

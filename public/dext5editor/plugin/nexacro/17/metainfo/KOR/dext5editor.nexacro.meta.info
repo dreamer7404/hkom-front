@@ -1,0 +1,1686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaInfo version="2.0">
+  <Object id="nexacro.DEXT5Editor">
+    <ObjectInfo inheritance="nexacro.Component"
+                classname="nexacro.DEXT5Editor" shorttypename="DEXT5Editor"  csstypename="DEXT5Editor" csscontrolname="DEXT5EditorControl"
+		            group="Component" subgroup="Component ( default )"
+		            csspseudo="true" container="false" composite="false" tabstop="true" cssstyle="true" contents="false" formats="false"
+		            contentseditor="" defaultwidth="false" defaultheight="false" registration="allow" edittype="" useinitvalue="true" popup="false"
+		            edittypecomponent="" dblclickevent="onusernotify"
+		            requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+		            description="DEXT5Editor 사용자 정의 컴포넌트입니다." />
+
+    <PropertyInfo>
+      <Property name="UseTrace"
+             edittype="Boolean" group="DEXT5Editor_Debug" subgroup="Debug" refreshinfo="" bind="false" mandatory="false" defaultvalue="false"
+             readonly="false" initonly="false" hidden="false" control="false"
+             style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+             enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+             requirement="" csspropertyname="" csselementname=""
+             normalpropertyname="UseTrace"
+             description="Trace Log 사용 여부를 설정합니다. " />
+      <Property name="InitXml"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="InitXml"
+				description="에디터 생성시 로드할 xml파일을 설정할 수 있습니다." />
+      <Property name="InitServerXml"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="InitServerXml"
+				description="에디터 생성시 로드할 xml파일의 가상경로를 설정할 수 있습니다. (예 : '/handler/upload_handler.ashx?f=dext_editor.xml';)" />
+      <Property name="InitVisible"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_InitVisible" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="InitVisible"
+				description="에디터 생성시 에디터를 화면에 표시할지 여부를 설정할 수 있습니다." />
+      <Property name="DefaultMessage"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultMessage"
+				description="에디터 생성시 디자인 영역에 기본으로 띄울 메세지를 설정합니다." />
+      <Property name="FirstLoadType"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_FirstLoadType" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FirstLoadType"
+				description="FirstLoadMessage의 Type을 설정 합니다." />
+      <Property name="FirstLoadMessage"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FirstLoadMessage"
+				description="에디터 생성 후 디자인 영역에 텍스트, html 등을 띄울 수 있습니다." />
+      <Property name="FileFieldID"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FileFieldID"
+				description="파일 업로드에 사용되는 File 태그의 name을 설정합니다." />
+      <Property name="RunTimes"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RunTimes"
+				description="에디터의 모드를 설정합니다. (웹표준모드, 플러그인모드)" />
+      <Property name="UsePluginOnNexacroBrowser"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RunTimes"
+				description="넥사크로 전용 브라우저에서 플러그인모드로 실행합니다. 0 으로 설정시 RunTimes의 값으로 동작합니다." />
+      <Property name="DocType"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_DocType" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DocType"
+				description="에디터의 DocType를 설정합니다." />
+      <Property name="Lang"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="Lang"
+				description="에디터 생성시 로드 할 에디터의 언어를 설정할 수 있습니다." />
+      <Property name="SkinName"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_SkinName" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="SkinName"
+				description="에디터 생성시 로드할 에디터의 skin 색상을 설정할 수 있습니다." />
+      <Property name="DefaultFontFamily"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultFontFamily"
+				description="에디터가 로드(시작)시 사용할 기본 폰트를 지정합니다. DEXT5 Editor는 다국어를 지원하므로 다국어 사용시 각 언어에 맞는 기본 폰트를 지정하는 기능으로 유용할 수 있습니다." />
+      <Property name="DefaultFontSize"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultFontSize"
+				description="에디터가 로드(시작)시 사용할 기본 폰트 크기를 지정합니다. DEXT5 Editor는 다국어를 지원하므로 다국어 사용시 각 언어에 맞는 기본 폰트 크기를 지정하는 기능으로 유용할 수 있습니다." />
+      <Property name="DefaultLineHeight"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultLineHeight"
+				description="에디터가 로드(시작)시 사용할 기본 lineheight 를 지정합니다." />
+      <Property name="DefaultFontMarginTop"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultFontMarginTop"
+				description="에디터가 로드(시작)시 사용할 기본 MarginTop 를 지정합니다." />
+      <Property name="DefaultFontMarginBottom"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultFontMarginBottom"
+				description="에디터가 로드(시작)시 사용할 기본 MarginBottom 를 지정합니다." />
+      <Property name="UserFieldID"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UserFieldID"
+				description="파일 업로드에 사용되는 User 태그의 name을 설정합니다." />
+      <Property name="UserFieldValue"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UserFieldValue"
+				description="파일 업로드에 사용되는 User 태그의 value을 설정합니다." />
+      <Property name="ShowTopMenu"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ShowTopMenu" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ShowTopMenu"
+				description="에디터의 메뉴바를 표시하거나 숨기는 기능을 설정합니다. 사용 용도에 따라서 메뉴바를 표시하지 않기를 원할 때 사용하면 유용 할 수 있습니다." />
+      <Property name="ShowToolBar"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ShowToolBar" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ShowToolBar"
+				description="에디터의 툴바는 상단, 하단 두개로 구성되어 있습니다. 이 설정은 상단의 툴바를 표시하거나 숨기는 기능을 설정합니다. 사용 용도에 따라서 상단 툴바를 표시하지 않기를 원할 때 사용하면 유용 할 수 있습니다." />
+      <Property name="ShowStatusBar"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ShowStatusBar" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ShowStatusBar"
+				description="에디터의 상태바는 '디자인', 'HTML' 및 '미리보기', 'TEXT' 탭으로 구성되어 있습니다.이 설정은 상태바를 표시하거나 숨기는 기능을 설정합니다. 사용 용도에 따라서 하단 상태바를 표시하지 않기를 원할 때 사용하면 유용 할 수 있습니다." />
+      <Property name="ShowTopStatusBar"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ShowTopStatusBar" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ShowTopStatusBar"
+				description="에디터의 상태바는 '디자인', 'HTML' 및 '미리보기', 'TEXT' 탭으로 구성되어 있습니다.이 설정은 상태바를 표시하거나 숨기는 기능을 설정합니다. 사용 용도에 따라서 하단 상태바를 표시하지 않기를 원할 때 사용하면 유용 할 수 있습니다." />
+      <Property name="ShowDialogPosition"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ShowDialogPosition" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ShowDialogPosition"
+				description="에디터의 다이얼로그창이 표시될 위치를 설정합니다." />
+      <Property name="SourceViewtype"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_SourceViewtype" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="SourceViewtype"
+				description="에디터 소스보기에서 html소스를 정렬할지 설정합니다." />
+      <Property name="ViewModeAutoWidth"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ViewModeAutoWidth" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ViewModeAutoWidth"
+				description="view 모드 사용 시 에디터 안의 내용 만큼 자동으로 width가 늘어납니다." />
+      <Property name="ViewModeAutoHeight"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ViewModeAutoHeight" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ViewModeAutoHeight"
+				description="view 모드 사용 시 에디터 안의 내용 만큼 자동으로 height가 늘어납니다." />
+      <Property name="FormListUrl"
+				edittype="String"  group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FormListUrl"
+				description="에디터 템플릿 양식을 설정하는 파일경로를 적용할 수 있습니다. http://를 포함한 전체 경로를 입력합니다." />
+      <Property name="Mode"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_Mode" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="Mode"
+				description="에디터 생성시 모드를 설정합니다. 기본값은 'edit' 모드로 설정되어 있습니다. 필요시 'view' 로 설정해 줍니다." />
+      <Property name="DevelopLangage"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false"
+				control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_DevelopLangage" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DevelopLangage"
+				description="사용중인 사이트의 언어를 설정합니다. 기본값은 NET이고, NET, JAVA, PHP 중 하나의 값을 사용할 수 있습니다." />
+      <Property name="HandlerUrl"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="HandlerUrl"
+				description="웹에서 RFC 1867 표준에 따르는 POST 방식의 파일 전송을 받아주는 페이지 URL입니다. 이미지 파일 또는 Flash, media 파일 등 서버에 파일이 업로드 되지 않을 경우 이 값의 설정을 확인하세요. 지정된 URL의 동작을 확인 하려면 handler_url URL에 '?dext=test'를 붙여서 테스트 후 페이지에 'Hi, DEXT5 Editor !!!! test' 가 표시되면 정상적으로 설정된 경우입니다." />
+      <Property name="ServerDomain"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ServerDomain"
+				description="이미지나 미디어 파일을 올릴 때, 업로드 된 파일의 웹 경로에 들어가는 도메인 부분을 설정합니다." />
+      <Property name="ToSavePathURL"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ToSavePathURL"
+				description="이미지 또는 Flash, Media 파일 등이 저장될 서버에 연결된 저장소의 URL 경로를 지정할 수 있습니다. 에디터에서 등록된 파일들은 설정된 폴더의 아래에 저장이 됩니다." />
+      <Property name="SaveFolderNameRule"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_SaveFolderNameRule" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="SaveFolderNameRule"
+				description="ToSavePathURL에 지정된 폴더 하위의 폴더들에 대한 저장 체계를 지정할 때 사용하는 값입니다." />
+      <Property name="AccessibilityValidationItems"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="AccessibilityValidationItems"
+				description="웹 접근성 검증 항목 중 검증 하고자 하는 항목들을 선택하여 설정 합니다. 
+				항목은 table_caption, table_summary, iframe_title, frame_title, img_alt, a_title, duplicate_id 이며 해당 값으로 설정하면 선택한 항목을 웹 접근성 검증 합니다." />
+      <Property name="RemoveItem"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RemoveItem"
+				description="메뉴바에서 메뉴를 표시하거나 숨기는 기능을 설정합니다. 메뉴 command명을 ','(콤마)로 구분하여 지정해 주면 해당 하위 메뉴를 표시하지 않습니다." />
+      <Property name="RemoveContextItem"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RemoveContextItem"
+				description="Context메뉴에서 메뉴를 표시하거나 숨기는 기능을 설정합니다. 메뉴 command명을 ','(콤마)로 구분하여 지정해 주면 해당 하위 메뉴를 표시하지 않습니다." />
+      <Property name="ToolBarGrouping"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ToolBarGrouping" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ToolBarGrouping"
+				description="툴바 그룹핑 사용여부를 설정합니다." />
+      <Property name="zXssUse"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_zXssUse" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="zXssUse"
+				description="XSS 방지 설정을 합니다. 값이 '1'일경우 script, vbscript 태그 입력시 문자열로 처리하고, src, href 등에 입력된 보안위협요소를 제거합니다." />
+      <Property name="zXssRemoveTags"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="zXssRemoveTags"
+				description="에디터에 입력되면 삭제할 태그를 설정합니다. script,iframe,object ... 형태로 여러 태그를 설정할 수 있으며 사용자가 해당되는 태그를 입력한 경우 에디터에서 삭제처리 합니다." />
+      <Property name="zXssRemoveEvents"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="zXssRemoveEvents"
+				description="에디터에 입력되면 삭제할 이벤트를 설정합니다. onclick,onload,onchange, ... 형태로 여러 이벤트를 설정할 수 있고 all 로 입력하면 모든 이벤트 값을 설정합니다. 사용자가 태그에 해당되는 이벤트를 입력한 경우 에디터에서 삭제처리 합니다. " />
+      <Property name="EditorBorder"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_EditorBorder" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="EditorBorder"
+				description="에디터 뷰모드시 테두리를 설정 합니다. 0일경우 테두리가 보이지 않습니다." />
+      <Property name="MimeUse"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_MimeUse" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeUse"
+				description="MIME 사용여부를 지정합니다. plugin 모듈을 사용할때만 사용가능 합니다. 1은 사용, 그외 값은 미사용입니다." />
+      <Property name="MimeCharset"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeCharset"
+				description="MIME Charset을 지정할 수 있습니다." />
+      <Property name="MimeConentEncodingType"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_MimeConentEncodingType" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeConentEncodingType"
+				description="MIME 인코딩 시에 인코딩 방법을 설정합니다. 기본값은 '3' 이고 'base64' 입니다. '1'로 설정시 '7bit', '2'로 설정시 '8bit', '3'로 설정시 'base64', '4'로 설정시 'quoted-printable' 입니다." />
+      <Property name="MimeFileTypeFilter"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeFileTypeFilter"
+				description="MIME 인코딩 대상 파일을 설정합니다. 기본값은 '1'이고 'Image' 입니다. '2'로 설정시 'css', '4'로 설정시 'js', '8'로 설정시 '동영상, swf 등 Object 파일' 입니다. 이미지와 js 파일 종류 모두를 인코딩 대상으로 지정하기 위해서는 '1' + '4' = 5 설정합니다. " />
+      <Property name="MimeLocalOnly"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_MimeLocalOnly" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeLocalOnly"
+				description="MIME 인코딩 대상 파일 중에서 외부 (Local PC가 아닌) 도 포함 할 지를 설정합니다. 기본값은 '1' PC에 위치한 파일만 인코딩이고, '0'로 설정시 로컬 PC 및 외부 URL에 있는 모든 파일 인코딩 입니다. " />
+      <Property name="MimeRemoveHeader"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_MimeRemoveHeader" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MimeRemoveHeader"
+				description="MIME 인코딩 생성 중에 'Subject', 'DataData' 및 'X-Generator' 값을 생성하지 않습니다. 기본값은 '0' 헤더를 기록하여 MIME 을 인코딩을 생성, '1'로 설정시 헤더를 제거하고 MIME을 인코딩을 생성합니다." />
+      <Property name="RemoveComment"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RemoveComment" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RemoveComment"
+				description="에디터에 내용이 들어올 때 주석 삭제 여부를 설정합니다. 기본값은 '1' 주석 삭제, '0' 으로 설정시 주석을 미삭제 합니다. " />
+      <Property name="FontFamilyList"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FontFamilyList"
+				description="" />
+      <Property name="FontSizeList"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FontSizeList"
+				description="" />
+      <Property name="FormattingList"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="FormattingList"
+				description="" />
+      <Property name="ZIndex"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ZIndex"
+				description="에디터의 z-Index를 지정할 수 있습니다." />
+      <Property name="DisableNotInitializedMessage"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DisableNotInitializedMessage"
+				description="초기 오류 알림을 '1' 로 설정시 비활성화 합니다." />
+      <Property name="DefaultBodySpaceUse"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultBodySpaceUse"
+				description="body 여백 사용여부, 1(기본값):사용함, 0:사용안함" />
+      <Property name="DefaultBodySpaceMode"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultBodySpaceMode"
+				description="body 여백 종류 1(기본값):margin, 2:padding" />
+      <Property name="DefaultBodySpaceValue"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DefaultBodySpaceValue"
+				description="body 여백에 사용될 값 설정 기본값:10px" />
+      <Property name="HighlightUse"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="HighlightUse"
+				description="검색 하이라이트 사용여부" />
+      <Property name="HighlightColor"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="HighlightColor"
+				description="검색 하이라이트 색상" />
+	  <Property name="ForbiddenWord"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ForbiddenWord"
+				description="금지어 설정합니다.&#10;예) 바보,멍청이" />
+	  <Property name="ForbiddenWordMode"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_ForbiddenWordMode" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ForbiddenWordMode"
+				description="금지어 모드 설정&#10;0(기본값) : 일반 금지어 모드&#10;1 : 플러그인 금지어 모드" />
+	  <Property name="ForbiddenWordWidth"
+				edittype="Number" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ForbiddenWordWidth"
+				description="금지어 팝업창 가로 길이 설정&#10;기본값: 800&#10;ForbiddenWordMode 1로 설정한 경우에만 적용 됩니다." />
+	  <Property name="ForbiddenWordHeight"
+				edittype="Number" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="ForbiddenWordHeight"
+				description="금지어 팝업창 세로 길이 설정&#10;기본값: 560&#10;ForbiddenWordMode 1로 설정한 경우에만 적용 됩니다." />
+	  <Property name="AllowVideoFileType"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="AllowVideoFileType"
+				description="비디오태그 삽입시 허용할 확장자를 설정합니다.&#10;기본값 : mp4,ogv,webm" />
+	  <Property name="AllowImageFileType"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="AllowImageFileType"
+				description="이미지 삽입시 허용할 확장자를 설정합니다.&#10;기본값 : jpg,jpeg,png,gif,bmp" />
+	  <Property name="AllowInsertFileType"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="AllowInsertFileType"
+				description="파일 삽입시 허용할 확장자를 설정합니다.&#10;예) txt,pdf" />
+	  <Property name="MaxVideoFileSize"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MaxVideoFileSize"
+				description="비디오 태그 삽입시 제한할 용량을 설정합니다.&#10;예) 20MB" />
+	  <Property name="MaxInsertFileSize"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MaxInsertFileSize"
+				description="파일 삽입시 제한할 용량을 설정합니다.&#10;예) 20MB" />
+	  <Property name="MaxImageFileSize"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="MaxImageFileSize"
+				description="이미지 삽입시 제한할 용량을 설정합니다.&#10;예) 20MB" />
+	  <Property name="UseHorizontalLine"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UseHorizontalLine"
+				description="가로 구분선 URL을 설정합니다.&#10;에디터 작성영역의 background url방식으로 적용 됩니다.&#10;만일 UseHorizontalLineHeight 값이 적용 된다면 이 설정은 무시됩니다." />
+	  <Property name="UseHorizontalLineHeight"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UseHorizontalLineHeight"
+				description="가로 구분선의 높이를 설정 합니다.&#10;500으로 설정하면 500px 위치에 가로선이 나타납니다.&#10;이 설정을 하면 UseHorizontalLine에 설정한 url은 무시됩니다." />
+	  <Property name="UseHorizontalLineStyle"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UseHorizontalLineStyle"
+				description="가로 구분선 Style을 설정합니다. css style 값을 넣어주시면 됩니다.&#10;예) 'solid 1px gray'&#10;이 설정은 UseHorizontalLineHeight 값이 설정된 경우에만 적용 됩니다." />
+	  <Property name="InitFocus"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_InitFocus" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="InitFocus"
+				description="에디터 생성된 후 작성 영역에 포커스 여부를 설정합니다.&#10;1(기본값) : 에디터 생성 후 포커스 유지,&#10;0 : 에디터 생성 후 포커스가 가지 않도록 함" />
+	  <Property name="UseReplaceImage"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_UseReplaceImage" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="UseReplaceImage"
+				description="iframe, flash, video 삽입 시 대체 이미지 사용여부를 설정합니다.&#10;1(기본값) : 사용&#10;0 : 사용안함" />
+	  <Property name="DisplayFontFamilyList"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DisplayFontFamilyList"
+				description="폰트 리스트 콤보박스에 표시할 이름 설정을 설정합니다. &#10;예) '맑은 고딕|A체,굴림|B체'" />
+		<Property name="RulerUse"
+					edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+					readonly="false" initonly="false" hidden="false" control="false"
+					style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+					enuminfo="enum_RulerUse" enuminfo2="" delimiter="" unitinfo=""
+					requirement="" csspropertyname="" csselementname=""
+					normalpropertyname="RulerUse"
+					description="가로 눈금자 표시 사용여부를 설정합니다. &#10;1(기본값) : 사용&#10;0 : 사용안함" />
+		<Property name="RulerInitPosition"
+					edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+					readonly="false" initonly="false" hidden="false" control="false"
+					style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+					enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+					requirement="" csspropertyname="" csselementname=""
+					normalpropertyname="RulerInitPosition"
+					description="눈금자 포인터의 위치 값(픽셀)을 설정합니다. &#10;기본값 : '680px'" />
+		<Property name="RulerViewPointer"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerViewPointer" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerViewPointer"
+				description="눈금자 포인터 아이콘 표시 사용여부를 설정합니다. &#10;1(기본값) : 사용&#10;0 : 사용안함." />
+		<Property name="RulerViewGuideLine"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerViewGuideLine" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerViewGuideLine"
+				description="에디터 작성 영역에 눈금자 포인터 기준선(세로) 표시 사용여부를 설정합니다. &#10;1(기본값) : 사용&#10;0 : 사용안함" />
+		<Property name="RulerGuideLineStyle"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerGuideLineStyle"
+				description="에디터 작성 영역에 눈금자 포인터 기준선(세로) 스타일을 설정합니다. css style 값을 넣어주시면 됩니다.&#10; 기본값 : dotted" />
+		<Property name="RulerViewRuler"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerViewRuler" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerViewRuler"
+				description="에디터 작성 영역 상단에 눈금자 이미지 표시 사용여부를 설정합니다. &#10;1(기본값) : 사용&#10;0 : 사용안함" />
+		<Property name="RulerMode"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerMode" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerMode"
+				description="룰러 모드를 설정합니다.&#10;1(기본값) : '1'모드 사용&#10;2 : '2'모드 사용" />
+		<Property name="RulerGuideLineColor"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerGuideLineColor"
+				description="에디터 작성 영역에 눈금자 포인터 기준선(세로)의 색상을 설정합니다. &#10;기본값 : rgb(255, 0, 0)" />
+		<Property name="RulerMoveGuideLineColor"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerMoveGuideLineColor"
+				description="룰러 모드 2에서 움직이는 가이드 라인의 색상을 설정합니다. &#10;기본값 : #666666" />
+		<Property name="RulerMoveGuideLineStyle"
+				edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerMoveGuideLineStyle"
+				description="룰러 모드 2에서 움직이는 가이드 라인의 스타일을 설정합니다. &#10;기본값 : dotted" />
+		<Property name="RulerUseInoutdent"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerUseInoutdent" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerUseInoutdent"
+				description="룰러 모드 2에서 가이드 라인 이동 시 들여쓰기 적용을 설정합니다. &#10;1(기본값) : 적용, &#10;0 : 미적용" />
+		<Property name="RulerMoveGap"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerMoveGap" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerMoveGap"
+				description="룰러 모드 2에서 눈금자 이동 간격 설정합니다. &#10;1(기본값) : 적용, &#10;0 : 미적용" />
+		<Property name="RulerUseResizeEvent"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerUseResizeEvent" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerUseResizeEvent"
+				description="ruler mode 2일때 에디터 resize 이벤트에서 ruler 위치 조정을 할지 말지에 대한 설정합니다. &#10;1(기본값) : 적용, &#10;0 : 미적용" />
+		<Property name="RulerDefaultView"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerDefaultView" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerDefaultView"
+				description="눈금자 보이게 혹은 안 보이게 설정합니다. &#10;1(기본값) : 보이게 설정, &#10;0 : 안 보이게 설정" />
+		<Property name="RulerAutoFitMode"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerAutoFitMode" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerAutoFitMode"
+				description="에디터 크기에 맞게 body 크기를 동적으로 맞춰주도록 설정합니다. &#10;1 : 사용, &#10;0(기본값) : 미사용" />
+		<Property name="RulerFixEditorWidth"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerFixEditorWidth" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerFixEditorWidth"
+				description="AutoFitMode가 1인 경우, 에디터 body에 width값을 style로 넣어주도록 설정합니다. &#10;1(기본값) : 적용, &#10;0 : 미적용" />
+		<Property name="RulerUseVertical"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerUseVertical" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerUseVertical"
+				description="수직 눈금자를 설정합니다. &#10;1 : 사용, &#10;0(기본값) : 미사용" />
+		<Property name="RulerUseMouseGuide"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_RulerUseMouseGuide" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="RulerUseMouseGuide"
+				description="룰러 모드 2인 경우 마우스 가이드를 설정합니다. &#10;1 : 적용, &#10;0(기본값) : 미적용" />
+		<Property name="DialogWindowScroll"
+				edittype="Enum" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+				readonly="false" initonly="false" hidden="false" control="false"
+				style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+				enuminfo="enum_DialogWindowScroll" enuminfo2="" delimiter="" unitinfo=""
+				requirement="" csspropertyname="" csselementname=""
+				normalpropertyname="DialogScroll"
+				description="넥사크로 전용 모듈 사용 시에만 다이얼로그 창이 에디터 화면보다 작을 때 스크롤이 활성화 됩니다. &#10;1 : 적용, &#10;0(기본값) : 미적용" />
+	  <Property name="DialogBorderRadius"
+		    	edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+			    readonly="false" initonly="false" hidden="false" control="false"
+			    style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+			    enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+			    requirement="" csspropertyname="" csselementname=""
+			    normalpropertyname="DialogBorderRadius"
+			    description="다이얼로그의 BorderRadius 스타일을 설정합니다. &#10;예) 10px" />
+	  <Property name="DialogBoxShadow"
+			    edittype="String" group="DEXT5Editor_Misc." subgroup="Misc." refreshinfo="" bind="false" mandatory="false" defaultvalue=""
+			    readonly="false" initonly="false" hidden="false" control="false"
+			    style="false" expr="false" deprecated="false" unused="false" objectinfo=""
+			    enuminfo="" enuminfo2="" delimiter="" unitinfo=""
+			    requirement="" csspropertyname="" csselementname=""
+			    normalpropertyname="DialogBoxShadow"
+			    description="다이얼로그의 BoxShadow 스타일을 설정합니다. &#10;예) 1px 1px 9px 5px rgb(0 0 0 / 20%)" />
+    </PropertyInfo>
+
+    <CSSInfo>
+      <PropertyInfo>
+        <Property name="background" group="Style" subgroup="background" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 의 배경 영역을 설정하는 속성입니다." csspropertyname="background" csselementname="" normalpropertyname="background" />
+        <Property name="border-radius" group="Style" subgroup="border-radius" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="WebBrowser 의 모서리 모양을 설정하는 속성입니다." csspropertyname="border-radius" csselementname="" normalpropertyname="borderRadius" />
+        <Property name="box-shadow" group="Style" subgroup="box-shadow" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 에 그림자 효과를 설정하는 속성입니다." csspropertyname="box-shadow" csselementname="" normalpropertyname="boxShadow" />
+        <Property name="color" group="Style" subgroup="color" edittype="Color" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 에 표시되는 텍스트의 색상을 설정하는 속성입니다." csspropertyname="color" csselementname="" normalpropertyname="color" />
+        <Property name="cursor" group="Style" subgroup="cursor" edittype="Enum" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="CursorType" unitinfo="" delimiter="" requirement="" description="WebBrowser 영역내에서 표시될 마우스 포인터의 종류를 설정하는 속성입니다." csspropertyname="cursor" csselementname="" normalpropertyname="cursor" />
+        <Property name="font" group="Style" subgroup="font" edittype="Font" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 에서 사용하는 폰트를 설정하는 속성입니다." csspropertyname="font" csselementname="" normalpropertyname="font" />
+        <Property name="letter-spacing" group="Style" subgroup="letter-spacing" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="WebBrowser 에 표시되는 문자의 간격(자간)을 설정하는 속성입니다." csspropertyname="letter-spacing" csselementname="" normalpropertyname="letterSpacing" />
+        <Property name="-nexa-border" group="Style" subgroup="border" edittype="Border" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="false" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 의 테두리를 설정하는 속성입니다." csspropertyname="-nexa-border" csselementname="" normalpropertyname="border" />
+        <Property name="-nexa-edge" group="Style" subgroup="-nexa-edge" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 의 테두리(Border) 안쪽에 표시될 edge 이미지를 설정하는 속성입니다." csspropertyname="-nexa-edge" csselementname="" normalpropertyname="edge" />
+        <Property name="-nexa-padding" group="Style" subgroup="padding" edittype="String" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 영역의 안쪽 여백을 설정하는 속성입니다." csspropertyname="-nexa-padding" csselementname="" normalpropertyname="padding" />
+        <Property name="-nexa-text-align" group="Style" subgroup="-nexa-text-align" edittype="Enum" defaultvalue="left" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="HorizontalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="WebBrowser 에 표시되는 텍스트 또는 컨텐츠의 가로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-text-align" csselementname="" normalpropertyname="textAlign" />
+        <Property name="-nexa-text-decoration" group="Style" subgroup="text-decoration" edittype="MultiEnum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="TextDecorationLine" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="WebBrowser 에 표시되는 텍스트에 적용할 효과를 설정하는 속성입니다." csspropertyname="-nexa-text-decoration" csselementname="" normalpropertyname="textDecoration" />
+        <Property name="-nexa-vertical-align" group="Style" subgroup="-nexa-vertical-align" edittype="Enum" defaultvalue="middle" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="VerticalAlign" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="WebBrowser에 표시되는 텍스트 또는 컨텐츠의 세로 정렬 방식을 설정하는 속성입니다." csspropertyname="-nexa-vertical-align" csselementname="" normalpropertyname="verticalAlign" />
+        <Property name="-nexa-word-wrap" group="Style" subgroup="-nexa-word-wrap" edittype="Enum" defaultvalue="none" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="WordWrapType" unitinfo="" delimiter="" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="WebBrowser 에 표시되는 텍스트가 출력영역보다 길 경우 자동으로 줄바꿈 되도록 설정하는 속성입니다." csspropertyname="-nexa-word-wrap" csselementname="" normalpropertyname="wordWrap" />
+        <Property name="opacity" group="Style" subgroup="opacity" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="" delimiter="" requirement="" description="WebBrowser 영역의 투명도를 설정하는 속성입니다." csspropertyname="opacity" csselementname="" normalpropertyname="opacity" />
+        <Property name="word-spacing" group="Style" subgroup="word-spacing" edittype="Number" readonly="false" initonly="false" hidden="false" control="false" style="true" expr="false" bind="false" deprecated="false" unused="true" mandatory="false" objectinfo="" enuminfo="" unitinfo="Pixel" delimiter="" requirement="" description="WebBrowser 에 표시되는 텍스트의 단어 사이 간격을 설정하는 속성입니다." csspropertyname="word-spacing" csselementname="" normalpropertyname="wordSpacing" />
+      </PropertyInfo>
+    </CSSInfo>
+
+    <StatusInfo>
+      <Status name="disabled" control="true" default="false" deprecated="false" unused="false" group="status" />
+      <Status name="mouseover" control="true" default="false" deprecated="false" unused="false" group="status" />
+      <Status name="focused" control="true" default="false" deprecated="false" unused="false" group="status" />
+      <Status name="enabled" control="true" default="true" deprecated="false" unused="false" group="status" />
+    </StatusInfo>
+
+    <ControlInfo />
+
+    <MethodInfo>
+      <Method name="GetEditor" group="DEXT5Editor_Method" async="false" usecontextmenu="false" deprecated="false" unused="false"
+				requirement=""
+				description="에디터 객체를 리턴합니다.">
+        <Syntax text="GetEditor()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetDext5Dom" group="DEXT5Editor_Method" async="false" usecontextmenu="false" deprecated="false" unused="false"
+				requirement=""
+				description="디자인 영역의 documentElement Dom을 가져옵니다. 일반적으로 디자인 영역을 직접 접근할 때 유용합니다. ">
+        <Syntax text="GetDext5Dom()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetDext5BodyDom" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="디자인 영역의 Body Dom을 가져옵니다. 일반적으로 디자인 영역을 직접 접근할 때 유용합니다. ">
+        <Syntax text="GetDext5BodyDom()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetHtmlValueExWithDocType" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 디자인 영역의 HTML 소스(DOCTYPE 태그 포함)를 리턴합니다. ">
+        <Syntax text="GetHtmlValueExWithDocType()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetHtmlValueExWithDocType" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 디자인 영역의 HTML 소스(DOCTYPE 태그 포함)를 입력합니다.">
+        <Syntax text="SetHtmlValueExWithDocType(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetHtmlValueEx" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML태그를 포함한 소스를 가져옵니다.">
+        <Syntax text="GetHtmlValueEx()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetHtmlValueEx" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 html 태그 내부의 소스를 입력합니다.">
+        <Syntax text="SetHtmlValueEx(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+
+      <Method name="GetHtmlValue" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML 소스에서 html 태그 내부의 소스를 가져옵니다.">
+        <Syntax text="GetHtmlValue()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetHtmlValue" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 html 태그 내부의 소스를 입력합니다.">
+        <Syntax text="SetHtmlValue(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetBodyValueEx" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML 소스에서 body태그를 포함한 소스를 가져옵니다.">
+        <Syntax text="GetBodyValueEx()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetBodyValueEx" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 body태그를 포함한 소스를 입력합니다.">
+        <Syntax text="SetBodyValueEx(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetBodyValueExLikeDiv" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML 소스에서 body의 소스를 div태그로 가져옵니다.">
+        <Syntax text="GetBodyValueExLikeDiv()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetBodyValueExLikeDiv" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="div 태그를 에디터 디자인 영역에 body 태그로 입력합니다.">
+        <Syntax text="SetBodyValueExLikeDiv(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetBodyValue" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML 소스에서 body태그 내부의 소스를 가져옵니다.">
+        <Syntax text="GetBodyValue()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetBodyValue" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 body태그 내부의 소스를 입력합니다.">
+        <Syntax text="SetBodyValue(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetBodyTextValue" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역의 HTML 소스에서 body태그 내부의 텍스트만 가져옵니다.">
+        <Syntax text="GetBodyTextValue()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetInsertHTML" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에서 커서가 있는 위치에 html 소스를 삽입합니다. ">
+        <Syntax text="SetInsertHTML(html)">
+          <Return />
+          <Arguments>
+            <Argument name="html" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetInsertText" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에서 커서가 있는 위치에 text를 삽입합니다. ">
+        <Syntax text="SetInsertText(text)">
+          <Return />
+          <Arguments>
+            <Argument name="text" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="LoadHtmlValueExFromURL" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 지정한 경로의 html 페이지를 띄웁니다.">
+        <Syntax text="LoadHtmlValueExFromURL(htmlURL)">
+          <Return />
+          <Arguments>
+            <Argument name="htmlURL" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetHtmlContents" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에서 set 되는 소스에 따라서 에디터 형태에 맞게 다시 set을 시켜줍니다. ">
+        <Syntax text="SetHtmlContents(htmlURL)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetImages" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 있는 이미지 태그의 경로를 가져옵니다. 이미지전체경로 + (구분자 : 0x0b) + 이미지명 + (구분자 : 0x0c) + ... + ">
+        <Syntax text="GetImages()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetServerImages" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 있는 서버 이미지 태그 경로를 가져옵니다. 이미지전체경로 + (구분자 : 0x0b) + 이미지명 + (구분자 : 0x0c) + ... + ">
+        <Syntax text="GetServerImages(imgURL)">
+          <Return />
+          <Arguments>
+            <Argument name="imgURL" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetDeletedImageUrl" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에서 삭제한 이미지의 url를 가져 옵니다. ">
+        <Syntax text="GetDeletedImageUrl()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="AddUserCssUrl" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 사용자의 css를 적용합니다. ">
+        <Syntax text="AddUserCssUrl(cssURL)">
+          <Return />
+          <Arguments>
+            <Argument name="cssURL" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="ClearUserCssUrl" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 사용자의 css를 적용합니다. bool 값에 true를 입력하면 에디터에 적용된 css 경로를 모두 삭제합니다. bool 값에 false를 입력하면 환경설정 xml에서 user_css_url 부분에 설정된 css는 제외하고 모두 삭제합니다. ">
+        <Syntax text="ClearUserCssUrl(bool)">
+          <Return />
+          <Arguments>
+            <Argument name="bool" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetUserCssText" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 사용자의 css를 style tag로 적용합니다.">
+        <Syntax text="SetUserCssText(cssText)">
+          <Return />
+          <Arguments>
+            <Argument name="cssText" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="ClearUserCssText" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 적용되어 있는 style tag를 삭제합니다.">
+        <Syntax text="ClearUserCssText()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetToSavePathUrl" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 설정된 ToSavePathUrl값을 가져옵니다. ">
+        <Syntax text="GetToSavePathUrl()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetToSavePathUrl" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 ToSavePathUrl값을 설정합니다. (기본값은 dext5editordata로 설정되어 있습니다.) ">
+        <Syntax text="SetToSavePathUrl(SavePathUrl)">
+          <Return />
+          <Arguments>
+            <Argument name="SavePathUrl" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetSize" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 로드 후 에디터의 크기를 정해줍니다. ">
+        <Syntax text="SetSize(width, height)">
+          <Return />
+          <Arguments>
+            <Argument name="width" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="height" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetFocusToEditor" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터가 로드 된 후 지정한 에디터에 포커스를 노출시켜 줍니다. ">
+        <Syntax text="SetFocusToEditor()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetRulerPosition" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 가로 눈금자 포인터의 위치 값을 설정합니다. ">
+        <Syntax text="SetRulerPosition(position)">
+          <Return />
+          <Arguments>
+            <Argument name="position" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetEditorBodyEditable" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 body 영역 안에 작성 가능 여부를 설정 합니다. ">
+        <Syntax text="SetEditorBodyEditable(bEditable)">
+          <Return />
+          <Arguments>
+            <Argument name="bEditable" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetFullScreen" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 전체화면으로 설정합니다. ">
+        <Syntax text="SetFullScreen()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetFullScreen" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 전체화면으로 설정합니다. ">
+        <Syntax text="SetFullScreen()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetFullScreen" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 전체화면으로 설정합니다. ">
+        <Syntax text="SetFullScreen()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="IsEmpty" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 내용이 있는지 없는지 체크합니다. ">
+        <Syntax text="IsEmpty()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="IsDirty" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 내용이 변경 되었는지 확인 할 수 있는 설정 입니다.">
+        <Syntax text="IsDirty()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetDirty" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 로드 후 변경 하지 않은 상태로 설정 할 때 사용 합니다. ">
+        <Syntax text="SetDirty(baseContentValue)">
+          <Return />
+          <Arguments>
+            <Argument name="baseContentValue" type="String" in="true" out="false" option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="LoadAutoSaveHtml" group="" async="false"
+				deprecated="false" unused="false"
+				requirement=""
+				description="에디터 localstorage에 들어간 마지막 내용으로 저장된 내용을 가져옵니다. ">
+        <Syntax text="LoadAutoSaveHtml()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetAccessibility" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 설정된 웹 접근성 단계를 가져옵니다. ">
+        <Syntax text="GetAccessibility()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetAccessibility" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 웹 접근성 값을 설정합니다. (기본값은 0으로 설정되어 있습니다.) ">
+        <Syntax text="SetAccessibility(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="GetAccessibilityValidation" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 웹 접근성 값을 설정합니다. (기본값은 0으로 설정되어 있습니다.) ">
+        <Syntax text="GetAccessibilityValidation()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetAccessibilityValidation" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="웹 접근성 검증 시 위반 항목이 있으면 웹 접근성 검증 팝업 창에 위반 목록을 노출 합니다. ">
+        <Syntax text="SetAccessibilityValidation()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="SetEditorMode" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 view 또는 edit 모드로 변경합니다. ">
+        <Syntax text="SetEditorMode(mode)">
+          <Return />
+          <Arguments>
+            <Argument name="mode" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetEditorBorder" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 전체영역을 감싸고 있는 Border의 노출 여부를 설정 합니다. ">
+        <Syntax text="SetEditorBorder(bEditorBorder)">
+          <Return />
+          <Arguments>
+            <Argument name="bEditorBorder" type="String" in="true"
+							out="false" option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SelectAll" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에서 작성 된 모든 내용을 선택합니다. ">
+        <Syntax text="SelectAll()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="Show" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 화면에 표시합니다.">
+        <Syntax text="Show()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="Hidden" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터를 화면에서 숨김니다. ">
+        <Syntax text="Hidden()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="ShowTopMenubar" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 메뉴 바를 표시하거나 숨기는 기능을 설정합니다. ">
+        <Syntax text="ShowTopMenubar(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="ShowToolbar" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 툴바는 상단, 하단 두 개로 구성되어 있습니다. 이 설정은 상단의 툴바를 표시하거나 숨기는 기능을 설정합니다. ">
+        <Syntax text="ShowToolbar(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="ShowStatusbar" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 상태 바는 '디자인', 'HTML' 및 '미리 보기', 'TEXT' 탭으로 구성되어 있습니다. 이 설정은 상태 바를 표시하거나 숨기는 기능을 설정합니다. ">
+        <Syntax text="ShowStatusbar(value)">
+          <Return />
+          <Arguments>
+            <Argument name="value" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="Dext5EncodeMime" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에서 작성된 html을 MIME 형태로 인코딩 하는 기능입니다. (단, mimeUse 설정값이 '1' 이어야 합니다.) ">
+        <Syntax text="Dext5EncodeMime(html, nFileType)">
+          <Return />
+          <Arguments>
+            <Argument name="html" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="nFileType" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="Dext5DecodeMime" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="마임데이터를 decode 합니다.">
+        <Syntax text="Dext5DecodeMime(mimeData)">
+          <Return />
+          <Arguments>
+            <Argument name="mimeData" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="Dext5EncodeMimeEx" group="DEXT5Editor_Method" async="true" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에서 작성된 html을 MIME 형태로 인코딩 하는 기능입니다.(html5, ieplugin 모두 사용 가능) (단, mimeUse 설정값이 '1' 이어야 합니다.) ">
+        <Syntax text="Dext5EncodeMime(html, nFileType)">
+          <Return />
+          <Arguments>
+            <Argument name="html" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="nFileType" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="callback" type="Function" in="true" out="false"
+					option="false" variable="false" description="callback function" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="DoSaveHTML" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 작성한 소스를 html파일로 저장합니다.">
+        <Syntax text="DoSaveHTML(strContent, strDefaultFileName, strCharSet)">
+          <Return />
+          <Arguments>
+            <Argument name="strContent" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="strDefaultFileName" type="String" in="true"
+							out="false" option="false" variable="false" description="any string" />
+            <Argument name="strCharSet" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="DoPrint" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 작성한 소스를 프린트 합니다. ">
+        <Syntax text="DoPrint(strHeader, strFooter)">
+          <Return />
+          <Arguments>
+            <Argument name="strHeader" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="strFooter" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="DoPrintPreview" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에 작성한 소스를 프린트 미리보기를 한 후 프린트 합니다. ">
+        <Syntax text="DoPrintPreview(strHeader, strFooter)">
+          <Return />
+          <Arguments>
+            <Argument name="strHeader" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="strFooter" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="DestroyEditor" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터에서 생성한 이벤트 및 객체를 삭제 합니다. ">
+        <Syntax text="DestroyEditor(editorID)">
+          <Return />
+
+        </Syntax>
+      </Method>
+
+      <Method name="SetHtmlContentsEw" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 디자인 영역에 html 소스를 입력합니다.">
+        <Syntax text="SetHtmlContentsEw(htmlValue)">
+          <Return />
+          <Arguments>
+            <Argument name="htmlValue" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="StartUpEditor" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="hidden영역에 에디터를 생성한 경우 필요시 에디터를 로드 합니다.">
+        <Syntax text="StartUpEditor()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="GetEditorId" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터의 ID를 얻어옵니다.">
+        <Syntax text="GetEditorId()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="EditorPrint" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				  requirement=""
+				  description="에디터의 내용을 프린트 합니다.">
+        <Syntax text="EditorPrint()">
+          <Return />
+        </Syntax>
+      </Method>
+
+      <Method name="AddHttpHeaderEx" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="업로드 시 헤더에 name, value를 추가 합니다.">
+        <Syntax text="AddHttpHeaderEx(headerName, headerValue)">
+          <Return />
+          <Arguments>
+            <Argument name="headerName" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+            <Argument name="headerValue" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="DextCommands" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 명령어를 실행합니다.">
+        <Syntax text="DextCommands(command)">
+          <Return />
+          <Arguments>
+            <Argument name="command" type="String" in="true" out="false"
+					option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetHighlight" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="검색 하이라이트 설정">
+        <Syntax text="SetHighlight(options)">
+          <Return />
+          <Arguments>
+            <Argument name="options" type="object" in="true" out="false"
+					option="false" variable="false" description="param object" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetEditorChangeMode" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement=""
+				description="에디터 편집 모드 변경(StatusBar)">
+        <Syntax text="SetEditorChangeMode(mode)">
+          <Return />
+          <Arguments>
+            <Argument name="mode" type="String" in="true" out="false"
+					option="false" variable="false" description="param object" />
+          </Arguments>
+        </Syntax>
+      </Method>
+
+      <Method name="SetUserField" group="" async="false" deprecated="false" unused="false" 
+        requirement="Runtime,HTML5"
+				description="동적으로 파라미터 셋팅">
+        <Syntax text="SetUserField(pUserFieliId, pUserFieldValue)">
+          <Return />
+          <Arguments>
+            <Argument name="pUserFieliId" type="String" in="true" out="false"
+							option="false" variable="false" description="any string" />
+            <Argument name="pUserFieldValue" type="String" in="true" out="false"
+							option="false" variable="false" description="any string" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="GetStatusBarMode" group="RaonkEditor_Method" async="false"
+				deprecated="false" usecontextmenu="false" unused="false"
+				requirement="" description="현재 선택되어 있는 status bar 모드를 반환합니다.">
+        <Syntax text="GetStatusBarMode()">
+          <Return />
+        </Syntax>
+      </Method>
+      <Method name="ReplaceAllContents" group="DEXT5Editor_Method" async="false" deprecated="false" usecontextmenu="false" unused="false"
+				requirement="" description="에디터에 작성된 내용 중 변경할 수 있습니다.">
+        <Syntax text="ReplaceAllContents(options)">
+          <Return />
+          <Arguments>
+            <Argument name="options" type="object" in="true" out="false"
+					option="false" variable="false" description="param object" />
+          </Arguments>
+        </Syntax>
+      </Method>
+      <Method name="GetForbiddenWordValidation" group="DEXT5Editor_Method" async="false"
+				deprecated="false" usecontextmenu="false" unused="false"
+				requirement="" description="에디터의 작성영역에 금지어가 존재하는지 여부를 확인합니다.">
+        <Syntax text="GetForbiddenWordValidation()">
+          <Return />
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    
+    <EventHandlerInfo>
+      <!-- create -->
+      <EventHandler name="dext_editor_before_loaded_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                      requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                      description="Editor 객체가 생성되기 전에 발생하는 이벤트입니다. 페이지에따라 업로드 설정을 변경하고 싶을 경우 사용합니다.">
+        <Syntax text="dext_editor_before_loaded_event(obj:nexacro.DEXT5Editor);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_loaded_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                      requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                      description="Editor 객체의 생성이 완료되었을 때 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_loaded_event(obj:nexacro.DEXT5Editor);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_onusernotify" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                    requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                    description="안드로이드 앱 실행환경에서 get API 호출시 결과 값 Return. ">
+        <Syntax text="dext_editor_onusernotify(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo)">
+          <Return />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_custom_action" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                      requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                      description="Editor 객체의 생성이 완료되었을 때 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_custom_action(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_set_complete_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                      requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                      description="Set API가 완료되었을 때 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_set_complete_event(obj:nexacro.DEXT5Editor);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_afterchangemode_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                description="에디터 보기화면(statusBar) 변경 후 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_afterchangemode_event(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_key_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                        requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                        description="키보드 Key가 입력되었을 때 발생하는 이벤트입니다.">
+        <Syntax text="dext_key_event(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_resized_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                        requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                        description="에디터 크기 리사이즈시 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_resized_event(obj:nexacro.DEXT5Editor);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_on_error_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                        requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                        description="에디터 오류 시 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_on_error_event(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_beforepaste_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                        requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                        description="에디터에 붙여넣기시 발생하는 이벤트입니다.">
+        <Syntax text="dext_editor_beforepaste_event(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+          <Return type="" description="" />
+          <Arguments>
+            <Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+            <Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+      <EventHandler name="dext_editor_set_forbidden_word_complete_event" group="DEXT5Editor_Event" deprecated="false" unused="false"
+                        requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser"
+                        description="플러그인 금지어인 경우 적용, 닫기 시 발생하는 이벤트입니다.">
+		<Syntax text="dext_editor_set_forbidden_word_complete_event(obj:nexacro.DEXT5Editor, evtInfo:nexacro.Dext5EditorEventInfo);">
+			<Return type="" description="" />
+			<Arguments>
+				<Argument name="obj" type="Object" in="true" out="false" option="false" variable="false" description="DEXT5Editor" />
+				<Argument name="evtInfo" type="nexacro.Dext5EditorEventInfo" in="true" out="false" option="false" variable="false" description="Dext5EditorEventInfo " />
+			</Arguments>
+		</Syntax>
+	  </EventHandler>
+    </EventHandlerInfo>
+    <ContentsInfo />
+  </Object>
+</MetaInfo>

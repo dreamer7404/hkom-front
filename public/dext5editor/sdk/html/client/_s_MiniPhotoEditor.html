@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">             
+    <h3 class="title">DEXT5 Editor :: MiniPhotoEditor</h3>
+    <p class="ttl">XML : &#60;width="....."&#62;&#60;/width&#62;<br /> Config : config.MiniPhotoEditor.Width <br />
+        XML : &#60;height="....."&#62;&#60;/height&#62;<br /> Config : config.MiniPhotoEditor.Height<br />
+        XML : &#60;img_tag_remove_attribute="....."&#62;&#60;/img_tag_remove_attribute&#62;<br />Config : config.MiniPhotoEditor.ImgTagRemoveAttribute<br />
+        XML : &#60;background_color="....."&#62;&#60;/background_color&#62;<br />Config : config.MiniPhotoEditor.BackgroundColor<br />
+        XML : &#60;background_opacity="....."&#62;&#60;/background_opacity&#62;<br />Config : config.MiniPhotoEditor.BackgroundOpacity<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        미니 이미지 편집기의 각종 설정을 적용합니다. <br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">mini_photo_editor.width</span>&nbsp;&nbsp;미니 이미지 편집기 팝업의 가로 길이를 설정합니다. <br />
+        <span class="firebrick">mini_photo_editor.height</span>&nbsp;&nbsp;미니 이미지 편집기 팝업의 세로 길이를 설정합니다. <br />
+        <span class="firebrick">mini_photo_editor.img_tag_remove_attribute</span>&nbsp;&nbsp;미니 이미지 편집기로 편집 시 특정 프로퍼티를 removeAttribute 하도록 설정합니다.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (콤마(,)로 구분하여 attribute명 입력) <br />
+        <span class="firebrick">mini_photo_editor.background_color</span>&nbsp;&nbsp;미니 이미지 편집기 팝업의 뒷 배경 색상을 설정합니다. <br />
+        <span class="firebrick">mini_photo_editor.background_opacity</span>&nbsp;&nbsp;미니 이미지 편집기 팝업의 뒷 배경 투명도를 설정합니다. (0.0~1.0) <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>미니 이미지 편집기의 각종 설정을 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;mini_photo_editor&#62;
+        &#60;width&#62;800px&#60;/width&#62;
+        &#60;height&#62;600px&#60;/height&#62;
+        &#60;img_tag_remove_attribute&#62;alt, class&#60;/img_tag_remove_attribute&#62;
+        &#60;background_color&#62;rgb(50,100,140)&#60;/background_color&#62;
+        &#60;background_opacity&#62;0.7&#60;/background_opacity&#62;
+    &#60;/mini_photo_editor&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.MiniPhotoEditor = {
+            Width : "800px",
+            Height : "600px",
+            ImgTagRemoveAttribute : "alt, class",
+            BackgroundColor : "rgb(50,100,140)",
+            BackgroundOpacity : "0.7"
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

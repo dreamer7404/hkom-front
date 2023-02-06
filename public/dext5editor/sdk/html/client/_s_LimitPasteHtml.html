@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">       
+    <span class="pl_type">[플러그인 전용]</span>        
+    <h3 class="title">DEXT5 Editor :: LimitPasteHtml</h3>
+    <p class="ttl">XML : &#60;limit_paste_html_length&#62;.....&#60;/limit_paste_html_length&#62;<br />Config : config.LimitPasteHtml <br />
+        XML : &#60;limit_paste_html_length length="....."&#62;&#60;/limit_paste_html_length&#62;<br />Config : config.LimitPasteHtmlLength<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        붙여넣기시 내용이 많을 경우를 체크할 때 사용합니다.<br />
+        엑셀, ppt등 에서 붙여넣을 때 HTML로 붙여넣기시 설정한 크기에 따라 붙여넣기를 비활성화 여부를 설정합니다. <br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">limit_paste_html_length</span>&nbsp;&nbsp;엑셀, ppt등 에서 붙여넣을 때 HTML로 붙여넣기시 설정한 크기에 따라 붙여넣기를 비활성화 여부를 설정합니다. <br />
+        <span class="firebrick">limit_paste_html_length@length</span>&nbsp;&nbsp;붙여넣기가 비활성화 될 기준(크기)을 설정합니다. <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>엑셀, ppt등 에서 붙여넣을 때 HTML로 붙여넣기시 길이가 500을 넘으면 붙여넣기를 비활성화 합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;limit_paste_html_length length="500"&#62;1&#60;/limit_paste_html_length&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.LimitPasteHtml = "1";
+        DEXT5.config.LimitPasteHtmlLength = "500";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

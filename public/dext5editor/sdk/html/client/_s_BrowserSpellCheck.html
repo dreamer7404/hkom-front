@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">            
+    <h3 class="title">DEXT5 Editor :: BrowserSpellCheck</h3>
+    <p class="ttl">XML : &#60;browser_spell_check&#62;.....&#60;/browser_spell_check&#62;, Config : config.BrowserSpellCheck</p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        브라우저에서 제공하는 맞춤법검사의 사용여부를 설정합니다. 
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <b>맞춤법검사를 제공하지 않는 브라우저에서는 비활성화 됩니다.</b><br />
+        기본값은 "0" 이고 설정 안함, <br />
+        "1"로 설정 시 브라우저에서 제공하는 맞춤법검사의 사용여부를 설정합니다. <br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>브라우저에서 제공하는 맞춤법검사를 사용합니다. </b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;browser_spell_check&#62;1&#60;/browser_spell_check&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.BrowserSpellCheck = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

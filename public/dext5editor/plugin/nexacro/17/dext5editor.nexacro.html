@@ -1,0 +1,156 @@
+﻿<html>
+<head>
+    <title>RAONWIZ with nexacro Runtime</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script type="text/javascript">
+        document.write('<scr' + 'ipt src="../../../js/dext5editor.js?t=' + (new Date).getTime() + '" type="text/javascript"><\/scr' + 'ipt>');
+    </script>
+    <script type="text/javascript">
+        var G_EventReturnValue;
+
+        if (!window.NEXACROHTML) {
+            window.NEXACROHTML = {};
+        }
+
+        window.NEXACROHTML.FireUserNotify = function (userdata) {
+            if (window.NEXACROWEBBROWSER) {
+                // 윈도우 html5, 안드로이드 html5, iOS html5, iOS 런타임
+                window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, userdata);
+            } else if (typeof nexacro == "undefined") {
+                //윈도우 런타임
+                window.document.title = userdata;
+            } else if (nexacro) {
+                //안드로이드 런타임
+                nexacro.fireUserNotify(userdata);
+            }
+        }
+        
+        function fn_bodyOnload() {
+            // iOS 넥사크로 앱에서 로드 안되는 현상 때문에 setTimeout 설정
+            setTimeout(function () {
+                window.NEXACROHTML.FireUserNotify("DEXT5_WEBBROWSER_INIT");
+            }, 0);
+        }
+
+        function fn_FireUserNotify(userdata) {
+            window.NEXACROHTML.FireUserNotify(userdata);
+        }
+
+        // loaded
+        function dext_editor_loaded_event(editorObj) {
+            window.NEXACROHTML.FireUserNotify("dext_editor_loaded_event");
+        }
+
+        // custom action
+        function dext_editor_custom_action(command, editorID) {
+            G_EventReturnValue = command;
+            window.NEXACROHTML.FireUserNotify("dext_editor_custom_action");
+        }
+
+        // set complete event
+        function dext_editor_set_complete_event(editorID) {
+            window.NEXACROHTML.FireUserNotify("dext_editor_set_complete_event");
+        }
+
+        // afterchangemode event
+        function dext_editor_afterchangemode_event(newMode, currentMode, editorID) {
+            G_EventReturnValue = {
+                newMode: newMode, currentMode: currentMode
+            };
+            window.NEXACROHTML.FireUserNotify("dext_editor_afterchangemode_event");
+        }
+
+        // key event
+        function dext_key_event(eventType, event, currElem, editorID) {
+            G_EventReturnValue = {
+                eventType: eventType, event: event, currElem: currElem
+            };
+            window.NEXACROHTML.FireUserNotify("dext_key_event");
+        }
+
+        // resized event
+        function dext_editor_resized_event(editor) {
+            window.NEXACROHTML.FireUserNotify("dext_editor_resized_event");
+        }
+
+        // on error event
+        function dext_editor_on_error_event(editorID, codemessage) {
+            G_EventReturnValue = codemessage;
+            window.NEXACROHTML.FireUserNotify("dext_editor_on_error_event");
+        }
+
+        // beforepaste event
+        function dext_editor_beforepaste_event(pasteSource) {
+            G_EventReturnValue = pasteSource;
+            window.NEXACROHTML.FireUserNotify("dext_editor_beforepaste_event");
+        }
+
+        // set forbiddenword complete event
+        function dext_editor_set_forbidden_word_complete_event(editorID, paramObj) {
+            G_EventReturnValue = paramObj;
+            window.NEXACROHTML.FireUserNotify("dext_editor_set_forbidden_word_complete_event");
+        }
+
+        function fn_getHtmlValueExWithDocType(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetHtmlValueExWithDocType|D5_nexacro_retunValue|" + DEXT5.getHtmlValueExWithDocType(editorID));
+        }
+        function fn_getHtmlValueEx(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetHtmlValueEx|D5_nexacro_retunValue|" + DEXT5.getHtmlValueEx(editorID));
+        }
+        function fn_getHtmlValue(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetHtmlValue|D5_nexacro_retunValue|" + DEXT5.getHtmlValue(editorID));
+        }
+        function fn_getBodyValueEx(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetBodyValueEx|D5_nexacro_retunValue|" + DEXT5.getBodyValueEx(editorID));
+        }
+        function fn_getBodyValueExLikeDiv(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetBodyValueExLikeDiv|D5_nexacro_retunValue|" + DEXT5.getBodyValueExLikeDiv(editorID));
+        }
+        function fn_getBodyValue(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetBodyValue|D5_nexacro_retunValue|" + DEXT5.getBodyValue(editorID));
+        }
+        function fn_getBodyTextValue(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetBodyTextValue|D5_nexacro_retunValue|" + DEXT5.getBodyTextValue(editorID));
+        }
+        function fn_getImages(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetImages|D5_nexacro_retunValue|" + DEXT5.getImages(editorID));
+        }
+        function fn_getServerImages(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetServerImages|D5_nexacro_retunValue|" + DEXT5.getServerImages(editorID));
+        }
+        function fn_getDeletedImageUrl(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetDeletedImageUrl|D5_nexacro_retunValue|" + DEXT5.getDeletedImageUrl(editorID));
+        }
+        function fn_getToSavePathUrl(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetToSavePathUrl|D5_nexacro_retunValue|" + DEXT5.getToSavePathUrl(editorID));
+        }
+        function fn_isEmpty(editorID) {
+            window.NEXACROHTML.FireUserNotify("IsEmpty|D5_nexacro_retunValue|" + DEXT5.isEmpty(editorID));
+        }
+        function fn_isDirty(editorID) {
+            window.NEXACROHTML.FireUserNotify("IsDirty|D5_nexacro_retunValue|" + DEXT5.isDirty(editorID));
+        }
+        function fn_getAccessibility(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetAccessibility|D5_nexacro_retunValue|" + DEXT5.getAccessibility(editorID));
+        }
+        function fn_getAccessibilityValidation(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetAccessibilityValidation|D5_nexacro_retunValue|" + DEXT5.getAccessibilityValidation(editorID));
+        }
+        function fn_dext5EncodeMime(editorID) {
+            window.NEXACROHTML.FireUserNotify("Dext5EncodeMime|D5_nexacro_retunValue|" + DEXT5.dext5EncodeMime(editorID));
+        }
+        function fn_dext5DecodeMime(editorID) {
+            window.NEXACROHTML.FireUserNotify("Dext5DecodeMime|D5_nexacro_retunValue|" + DEXT5.dext5DecodeMime(editorID));
+        }
+        function fn_getForbiddenWordValidation(editorID) {
+            window.NEXACROHTML.FireUserNotify("GetForbiddenWordValidation|D5_nexacro_retunValue|" + DEXT5.getForbiddenWordValidation(editorID));
+        }
+    </script>
+</head>
+<body onload="fn_bodyOnload();" style="padding:0; margin:0; height:100%; text-align: center; overflow: hidden; border: 0;">
+    <div id="dext_Holder" style="width: 100%; height: 100%; margin: 0 auto; overflow: hidden;"></div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+(function(){var a={icon:{p_popuppreview:"PREVIEW (Blank)"}};try{if(G_DEPlugin){G_DEPlugin.popuppreview.lang=a;dext5_lang.plugins.popuppreview=a;var b=document.getElementById("ue_"+DEXTTOP.G_CURREDITOR.ID+"p_popuppreview");b&&b.setAttribute("title",a.icon.p_popuppreview)}}catch(c){}})();

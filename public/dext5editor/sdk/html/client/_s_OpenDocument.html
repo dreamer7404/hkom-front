@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">             
+    <span class="pl_type">[플러그인 전용]</span>     
+    <h3 class="title">DEXT5 Editor :: OpenDocument</h3>
+    <p class="ttl">XML : &#60;open_document before_open_event="....."&#62;&#60;/open_document&#62;<br /> Config : config.OpenDocument.BeforeOpenEvent <br />
+        XML : &#60;open_document use_html5_fileopen="....."&#62;&#60;/open_document&#62;<br /> Config : config.OpenDocument.UseHtml5FileOpen<br />
+        XML : &#60;open_document use_hwp="....."&#62;&#60;/open_document&#62;, Config : config.OpenDocument.UseHwp<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        파일 열기 관련 설정을 적용합니다.<br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">BeforeOpenEvent</span>&nbsp;&nbsp;파일 오픈전 이벤트(dext5EventBeforeOpenHtmlConvert) 호출여부를 설정합니다. (0 : 이벤트 사용안함, 1 : 이벤트 사용함)<br />
+        <span class="firebrick">UseHtml5FileOpen</span>&nbsp;&nbsp;"0"으로 설정시 파일 열기기능 사용시 html파일 open 불가능, "1"로 설정시 가능하도록 설정합니다.<br />
+        <span class="firebrick">UseHwp</span>&nbsp;&nbsp;"0"으로 설정시 파일 열기기능 사용시 hwp파일 open 불가능, "1"로 설정시 가능하도록 설정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>hwp, html 파일 열기를 허용하고 열기전 이벤트를 발생시키도록 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;open_document before_open_event="1" use_html5_fileopen="1" use_hwp="1"&#62;
+        .....
+    &#60;/open_document&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.OpenDocument = {
+            BeforeOpenEvent : "1",
+            UseHtml5FileOpen : "1",
+            UseHwp : "1"
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">         
+    <h3 class="title">DEXT5 Editor :: WebFontCssUrl</h3>
+    <p class="ttl">XML : &#60;web_font_css_url&#62;.....&#60;/web_font_css_url&#62;, Config : config.WebFontCssUrl <br />
+        XML : &#60;web_font_css_url always_set="....."&#62;&#60;/web_font_css_url&#62;, Config : config.WebFontCssAlwaysSet
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터 로드시 사용자의 web font CSS를 에디터 body의 head부분에 import 해주도록 설정합니다.<br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        에디터 작성영역 및 글꼴메뉴(콤보박스)에 적용됩니다.<br />
+        <span class="firebrick">web_font_css_url</span>&nbsp;&nbsp;import할 사용자의 CSS url(http://를 포함한 전체)을 입력합니다.<br />
+        <span class="firebrick">always_set</span>&nbsp;&nbsp;해당 CSS를 항상 포함할지의 여부를 설정합니다. (0 : 최초로드시에만 포함, 1 : 항상포함)
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 로드시 사용자의 web font CSS를 에디터 body의 head부분에 import후 항상 포함해주도록 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;web_font_css_url always_set="1"&#62;.....&#60;/web_font_css_url&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.WebFontCssUrl = ".....";
+        DEXT5.config.WebFontCssAlwaysSet = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

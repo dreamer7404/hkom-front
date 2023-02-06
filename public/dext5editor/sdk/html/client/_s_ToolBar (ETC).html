@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: ToolBar (ETC)</h3>
+    <p class="ttl">
+        XML : &#60;tool top="....."&#62;full_screen&#60;/tool&#62;, Config : config.FullScreenTop<br />
+        XML : &#60;tool bottom="....."&#62;full_screen&#60;/tool&#62;, Config : config.FullScreenBottom<br />
+        XML : &#60;tool left="....."&#62;full_screen&#60;/tool&#62;, Config : config.FullScreenLeft<br />
+        XML : &#60;tool right="....."&#62;full_screen&#60;/tool&#62;, Config : config.FullScreenRight<br />
+        XML : &#60;tool start_main_page="....."&#62;help&#60;/tool&#62;, Config : config.HelpStartMainPage<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        전체화면시 에디터 전체영역의 inset값(top, right, bottom, left)을 설정합니다. <br />
+        help start page를 dext5 소개 페이지로 할지의 여부를 설정합니다.
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">full_screen top</span>&nbsp;&nbsp; 전체화면시 에디터 전체영역의 top inset값을 설정합니다.<br />
+        <span class="firebrick">full_screen bottom</span>&nbsp;&nbsp; 전체화면시 에디터 전체영역의 bottom inset값을 설정합니다.<br />
+        <span class="firebrick">full_screen left</span>&nbsp;&nbsp; 전체화면시 에디터 전체영역의 left inset값을 설정합니다.<br />
+        <span class="firebrick">full_screen right</span>&nbsp;&nbsp; 전체화면시 에디터 전체영역의 right inset값을 설정합니다.<br />
+        <span class="firebrick">help start_main_page</span>&nbsp;&nbsp; 기본값은 "1"로 사용자 도움말 기본 페이지를 dext5 소개 페이지로 설정하고,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"0"으로 설정시 우측 탭의 맨 처음 탭을 기본 페이지로 설정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>전체화면시 에디터 전체영역의 inset값을 200px 200px 200px 200px로 설정합니다.</b>
+<b>사용자 도움말 기본 페이지를 dext5 소개 페이지로 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;tool_bar_1&#62;
+    .....
+    &#60;tool left="200" top="200" right="200" bottom="200"&#62;full_screen&#60;/tool&#62;
+    &#60;tool start_main_page="1"&#62;help&#60;/tool&#62;
+    .....
+&#60;/tool_bar_1&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;   
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.ToolBar1.FullScreenTop = "200";
+        DEXT5.config.ToolBar1.FullScreenBottom = "200";
+        DEXT5.config.ToolBar1.FullScreenLeft = "200";
+        DEXT5.config.ToolBar1.FullScreenRight = "200";
+        DEXT5.config.HelpStartMainPage = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

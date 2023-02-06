@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: contentsSizeCheck</h3>
+    <p class="ttl">void contentsSizeCheck(includeExternalUrl, maxContentsSize, callBackFunc, editor_id)</p>
+    <p class="txt">
+        maxContentsSize 파라미터에 입력한 값과 에디터 내의 Contents 전체 파일의 용량을 비교합니다.<br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음. <br />
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">includeExternalUrl</span>&nbsp;&nbsp;외부에서 추가한 content의 size를 포함할지 여부를 의미합니다.(0 : 추가안함, 1 : 추가함)<br />
+        <span class="firebrick">maxContentsSize</span>&nbsp;&nbsp;임의로 비교할 에디터의 최대 contents 사이즈를 의미합니다.<br />
+        <span class="firebrick">callBackFunc</span>&nbsp;&nbsp;callBack 함수를 의미합니다. (첫번째 파라미터로 boolean값을 가져옵니다. (maxContentsSize &#60; totalSize))<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;적용할 에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.<br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext_paste_image_event(HTMLCollection) {
+        // 이미지 붙여넣기시 이벤트가 발생하도록 설정합니다.
+        var CBF = function(result){
+            // 테스트 callBack function을 설정합니다. 
+            if(result){
+                alert("content 용량 10MB를 초과하였습니다.");
+            }
+        }
+        // id가 editor1인 에디터의 body영역의 총 content size와 10,000,000 Byte를 비교하여 callback function으로 결과를 받습니다.
+        DEXT5.contentsSizeCheck(0, '10000000', CBF, 'editor1');
+    }
+        
+&#60;/script&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;
+  
+    &#60;!-- 에디터 생성 --&#62;
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

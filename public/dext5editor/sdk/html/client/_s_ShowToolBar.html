@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: ShowToolBar</h3>
+    <p class="ttl">
+        XML : &#60;show_toolbar&#62;.....&#60;/show_toolbar&#62;, Config : config.ShowToolBar<br />
+        XML : &#60;show_toolbar enable_disable_mode="....."&#62;&#60;/show_toolbar&#62;, Config : config.ToolBarEnableDisableMode<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터의 툴바는 상단과 하단으로 구성되어 있습니다.<br />
+        이 설정은 상단, 하단 툴바를 보이거나 숨기는 기능을 설정합니다.<br/>
+        사용 용도에 따라서 상단, 하단 툴바를 숨김으로 설정하기를 원할 때 사용하면 유용 할 수 있습니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">show_statusbar</span>&nbsp;&nbsp; 기본값은 "3" 이고 "상단, 하단" 툴바 모두 보임으로 설정합니다.<br />
+        <span style="padding-left:154px">"2" 로 설정 시 "상단" 툴바를 숨김으로 설정합니다.</span><br />
+        <span style="padding-left:154px">"1" 로 설정 시 "하단" 툴바를 숨김으로 설정합니다.</span><br />
+        <span style="padding-left: 154px">"0" 으로 설정 시 "상단, 하단" 툴바 모두를 숨김으로 설정합니다.</span><br />
+        <span class="firebrick">enable_disable_mode</span>&nbsp;&nbsp;기본값 및 설정값은 2이며 한글 입력 시 툴바가 활성화 비활성화가 반복되는 현상을 방지하는 설정입니다.</span>
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 툴바 중 상단 툴바를 숨김으로 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;show_toolbar enable_disable_mode="2"&#62;2&#60;/show_toolbar&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;  
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.ShowToolBar = "2";
+        DEXT5.config.ToolBarEnableDisableMode = "2";
+
+        new Dext5editor("editor1");
+    &#60;/script&#62;       
+
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

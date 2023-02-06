@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">         
+    <h3 class="title">DEXT5 Editor :: WordCount</h3>
+    <p class="ttl">XML : &#60;word_count&#62;.....&#60;/word_count&#62;, Config : config.WordCount.Use <br />
+        XML : &#60;word_count count_white_space="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.CountWhiteSpace <br />
+        XML : &#60;word_count limit="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.Limit <br />
+        XML : &#60;word_count limit_byte="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.LimitByte <br />
+        XML : &#60;word_count limit_char="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.LimitChar <br />
+        XML : &#60;word_count limit_line="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.LimitLine <br />
+        XML : &#60;word_count limit_message="....."&#62;&#60;/word_count&#62;, Config : config.WordCount.LimitMessage
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터 우측 하단에 글자수와 행의 표시유무 및<br/>
+        글자수 제한, 공백포함 글자수, alert 출력여부 등을 설정합니다. 
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">word_count</span>&nbsp;&nbsp;기본값은 "0"으로 미표시, "1"로 설정시 글자수와 행을 우측 하단에 표시합니다.<br />
+        <span class="firebrick">count_white_space</span>&nbsp;&nbsp;문자수에 공백을 포함할지 설정합니다. (0 : 포함안함, 1 : 포함)<br />
+        <span class="firebrick">limit</span>&nbsp;&nbsp;글자수의 제한여부를 설정합니다. (0 : 제한안함, 1 : 제한함)<br />
+        <span class="firebrick">limit_byte</span>&nbsp;&nbsp;제한할 글자의 Byte를 설정(숫자입력)합니다. (limit_char의 값이 설정되어있으면 limit_char의 설정을 우선으로 합니다.)<br />
+        <span class="firebrick">limit_char</span>&nbsp;&nbsp;제한할 글자수를 설정(숫자입력)합니다.<br />
+        <span class="firebrick">limit_line</span>&nbsp;&nbsp;입력 제한할 행의 수를 설정(숫자입력)합니다.<br />
+        <span class="firebrick">limit_message</span>&nbsp;&nbsp;글자수 또는 행의 제한 초과시 alert의 출력 여부를 설정합니다. (0 : 출력안함, 1 : 출력 / WordCount.Limit="1" 일때 작동합니다.)
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 우측 하단에 글자수와 행의 표시유무 및 글자수 제한, 공백포함 글자수, alert 출력여부 등을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;word_count count_white_space="1" limit="1" limit_char="4000" limit_line="100" limit_message="1"&#62;1&#60;/word_count&#62;
+    &#60;-- Byte 단위로 제한하도록 설정할 시 limit_char 대신 limit_byte를 설정하시면 됩니다. --&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.WordCount = {
+            Use : "1",
+            CountWhiteSpace : "1",
+            limit : "1",
+            //limit_byte : "4000", //Byte 단위로 제한하고 싶을때 limit_char 대신 사용합니다.
+            limit_char : "4000",
+            limit_line : "100",
+            limit_message : "1"
+        };
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

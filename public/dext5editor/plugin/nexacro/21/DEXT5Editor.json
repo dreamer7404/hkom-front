@@ -1,0 +1,18 @@
+﻿{
+	"name": "DEXT5Editor",
+	"version": "2022.02.03",
+	"description": "DEXT5Editor Plugin for nexacro platform N (version 21)",
+	"license": "Commercial license",
+	"scripts": [
+		"dext5editor/js/dext5editor.js",
+		"dext5editor/plugin/nexacro/21/dext5editor.nexacro21.js"
+	],
+	"objInfo": [
+		"dext5editor/plugin/nexacro/21/metainfo/dext5editor.nexacro.enum.info",
+		"dext5editor/plugin/nexacro/21/metainfo/dext5editor.nexacro.meta.info",
+		"dext5editor/plugin/nexacro/21/metainfo/dext5editor.nexacro.event.info"
+	],
+	"designscripts": [
+		"dext5editor/plugin/nexacro/21/design/dext5editor.nexacro.design.js"
+	]
+}

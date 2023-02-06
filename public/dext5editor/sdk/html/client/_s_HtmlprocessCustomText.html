@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">            
+    <h3 class="title">DEXT5 Editor :: HtmlprocessCustomText</h3>
+    <p class="ttl">XML : &#60;htmlprocess_custom_text&#62;.....&#60;/htmlprocess_custom_text&#62;, Config : config.HtmlprocessCustomText<br />
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터의 프로세스 로딩 문구를 설정합니다.<br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        기본값은 "&#60;b&#62;Processing...&#60;/b&#62;" 이며,<br />
+        문구 설정시 에디터의 프로세스 로딩 문구로 적용됩니다. <br />
+        XML 설정시 문구의 Style을 지정할 수 없습니다.
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>에디터의 프로세스 로딩 문구를 &#60;b style="color:darkcyan"&#62;작업중...&#60;/b&#62;으로 설정합니다.</b>
+<b>XML 설정시에는 문구의 Style을 제외한 텍스트만 지정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;htmlprocess_custom_text&#62;작업중...&#60;/htmlprocess_custom_text&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.HtmlprocessCustomText = "&#60;b style="color:darkcyan"&#62;작업중...&#60;/b&#62;";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

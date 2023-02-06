@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">          
+    <h3 class="title">DEXT5 Editor :: ReturnEvent</h3>
+    <p class="ttl">XML : &#60;return_event command_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventCommand<br />
+        XML : &#60;return_event drag_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventDrag<br />
+        XML : &#60;return_event focus_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventFocus<br />
+        XML : &#60;return_event input_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventInput<br />
+        XML : &#60;return_event keyboard_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventKeyboard<br />
+        XML : &#60;return_event mouse_event="....."&#62;&#60;/return_event&#62;, Config : config.ReturnEventMouse<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터의 이벤트들의 활성화/비활성화 여부를 설정합니다. <br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        아래 모든 설정값의 기본값은 "0" 이며 설정값이 "0"일 경우 해당 이벤트 발생하지 않습니다.<br />
+        <span class="firebrick">command_event</span>&nbsp;&nbsp;"1"로 설정시 dext_command_event를 사용 가능하도록 설정합니다. <br />
+        <span class="firebrick">drag_event</span>&nbsp;&nbsp;"1"로 설정시 dext_drag_event를 사용 가능하도록 설정합니다.<br />
+        <span class="firebrick">focus_event</span>&nbsp;&nbsp;"1"로 설정시 dext_focus_event 사용 가능하도록 설정합니다.<br />
+        <span class="firebrick">input_event</span>&nbsp;&nbsp;"1"로 설정시 dext_input_event를 사용 가능하도록 설정합니다. <br />  
+        <span class="firebrick">keyboard_event</span>&nbsp;&nbsp;"1"로 설정시 dext_key_event를 사용 가능하도록 설정합니다.<br />
+        <span class="firebrick">mouse_event</span>&nbsp;&nbsp;"1"로 설정시 dext_mouse_event를 사용 가능하도록 설정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>plugin 설치관련 내용을 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    &#60;return_event command_event="1" drag_event="1" focus_event="1" input_event="1" keyboard_event="1" mouse_event="1"&#62;&#60;/return_event&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.ReturnEventCommand = "1";
+        DEXT5.config.ReturnEventDrag = "1";
+        DEXT5.config.ReturnEventFocus = "1";
+        DEXT5.config.ReturnEventInput = "1";
+        DEXT5.config.ReturnEventKeyboard = "1";
+        DEXT5.config.ReturnEventMouse = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

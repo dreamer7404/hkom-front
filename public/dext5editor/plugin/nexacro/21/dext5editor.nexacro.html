@@ -1,0 +1,137 @@
+﻿<html>
+<head>
+    <title>RAONWIZ with nexacro Runtime</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script type="text/javascript">
+        document.write('<scr' + 'ipt src="../../../js/dext5editor.js?t=' + (new Date).getTime() + '" type="text/javascript"><\/scr' + 'ipt>');
+    </script>
+    <script type="text/javascript">
+
+        if ( !window.NEXACROHTML ) {
+            window.NEXACROHTML = {};
+        }
+
+        // ref. http://tobetong.com/?p=10955&ckattempt=1
+        window.NEXACROHTML.FireUserNotify = function ( userdata ) {
+            if ( window.NEXACROWEBBROWSER ) {
+                // Web runtime environment, iOS/iPadOS NRE 일때
+                window.NEXACROWEBBROWSER.on_fire_onusernotify( window.NEXACROWEBBROWSER, userdata );
+            } else if ( typeof nexacro === "undefined" ) {
+                // Windows NRE 일때
+                window.document.title = userdata;
+            } else if ( nexacro ) {
+                // Android NRE, macOS NRE 일때,
+                // nexacro.Webview 일때
+                nexacro.fireUserNotify( userdata );
+            }
+        }        
+        function fn_bodyOnload() {
+            // iOS 넥사크로 앱에서 로드 안되는 현상 때문에 setTimeout 설정
+            setTimeout(function () {
+                window.NEXACROHTML.FireUserNotify("DEXT5EDIOR_WEBBROWSER_INIT");
+            }, 0);
+        }
+        function fn_FireUserNotify(userdata) {
+            window.NEXACROHTML.FireUserNotify(userdata);
+        }
+        function fn_RunFunction( func ) {
+            if ( typeof func === 'string' ) {
+                return looseJsonParse( func );
+            }
+        }
+        function looseJsonParse( obj ) {
+            return Function( '"use strict";return (' + obj + ')' )();
+        }
+
+        // loaded
+        function dext_editor_loaded_event(editorObj) {
+
+            var editor = DEXT5.GetEditorByName(editorObj.ID);
+
+            G_EventReturnValue_loaded_event = {
+                usePluginMode: (typeof editor._FRAMEWIN.dext5plugin !== 'undefined') ? "1" : "0"
+            };
+            G_EventReturnValue_loaded_event = DEXT5.util.jsonToString( G_EventReturnValue_loaded_event );
+            G_EventReturnValue_loaded_event = DEXT5.util.base64_encode( G_EventReturnValue_loaded_event );
+
+            // 문서모드 10 & 웹 브라우저 & 룰러 모드 2일 경우 툴바 그룹핑 안되는 현상 발생하여 로직 추가
+            if (DEXT5.browser.ieVersion == 10 && window.G_NexacroObjectType == "nexacro.WebBrowser"
+                && editor._config.ruler.mode && editor._config.ruler.mode == '2') {
+                setTimeout(function () {
+                    editorObj.editor._FRAMEWIN.groupingIcon(editorObj.editor);
+                    editorObj.editor._FRAMEWIN.setPositionGroupingDiv(1);
+                    editorObj.editor._FRAMEWIN.setPositionGroupingDiv(2);
+                }, 100);
+            }
+
+            window.NEXACROHTML.FireUserNotify("dext_editor_loaded_event");
+        }
+
+        // custom action
+        function dext_editor_custom_action(command, editorID) {
+            G_EventReturnValue_custom_action = DEXT5.util.base64_encode( command );
+
+            window.NEXACROHTML.FireUserNotify("dext_editor_custom_action");
+        }
+
+        // set complete event
+        function dext_editor_set_complete_event(editorID) {
+            window.NEXACROHTML.FireUserNotify("dext_editor_set_complete_event");
+        }
+
+        // afterchangemode event
+        function dext_editor_afterchangemode_event(newMode, currentMode, editorID) {
+            G_EventReturnValue_afterchangemode_event = {
+                newMode: newMode, currentMode: currentMode
+            };
+
+            G_EventReturnValue_afterchangemode_event = DEXT5.util.jsonToString( G_EventReturnValue_afterchangemode_event );
+            G_EventReturnValue_afterchangemode_event = DEXT5.util.base64_encode( G_EventReturnValue_afterchangemode_event );
+
+            window.NEXACROHTML.FireUserNotify("dext_editor_afterchangemode_event");
+        }
+
+        // key event
+        function dext_key_event(eventType, event, currElem, editorID) {
+            G_EventReturnValue_key_event = {
+                eventType: eventType,
+                event: event,
+                currElem: currElem
+            };
+
+            G_EventReturnValue_key_event = DEXT5.util.jsonToString( G_EventReturnValue_key_event );
+            G_EventReturnValue_key_event = DEXT5.util.base64_encode( G_EventReturnValue_key_event );
+
+            window.NEXACROHTML.FireUserNotify("dext_key_event");
+        }
+
+        // resized event
+        function dext_editor_resized_event(editor) {
+            window.NEXACROHTML.FireUserNotify("dext_editor_resized_event");
+        }
+
+        // on error event
+        function dext_editor_on_error_event(editorID, codemessage) {
+            G_EventReturnValue_on_error_event = DEXT5.util.base64_encode( codemessage );
+
+            window.NEXACROHTML.FireUserNotify("dext_editor_on_error_event");
+        }
+        
+        // set forbiddenword complete event
+        function dext_editor_set_forbidden_word_complete_event(editorID, paramObj) {
+            G_EventReturnValue_set_forbidden_word_complete_event = paramObj;
+            G_EventReturnValue_set_forbidden_word_complete_event = DEXT5.util.jsonToString( G_EventReturnValue_set_forbidden_word_complete_event );
+            G_EventReturnValue_set_forbidden_word_complete_event = DEXT5.util.base64_encode( G_EventReturnValue_set_forbidden_word_complete_event );
+
+            window.NEXACROHTML.FireUserNotify("dext_editor_set_forbidden_word_complete_event");
+        }
+    </script>
+</head>
+<body onload="fn_bodyOnload();" style="padding:0; margin:0; height:100%; text-align: center; overflow: hidden; border: 0;">
+    <div id="component_Holder" style="width: 100%; height: 100%; margin: 0 auto; overflow: hidden;"></div>
+</body>
+</html>

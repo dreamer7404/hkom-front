@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: Figure</h3>
+    <p class="ttl">XML : &#60;figure use="....."&#62;&#60;/Figure&#62;, Config : config.Figure.Use<br />
+        XML : &#60;figure default_caption="....."&#62;&#60;/Figure&#62;, Config : config.Figure.DefaultCaption<br />
+        XML : &#60;figure figcaption_style="....."&#62;&#60;/Figure&#62;, Config : config.Figure.FigcaptionStyle<br />
+        XML : &#60;figure figure_style="....."&#62;&#60;/Figure&#62;, Config : config.Figure.FigureStyle</p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        이미지 추가시 이미지 설명에 대한 설정들을 적용합니다.
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="txt">
+            <span class="firebrick">XML:figure@use,Config:config.Figure.Use</span>&nbsp;&nbsp;기본값은 "0" 이고 사용 안함, "1"으로 설정 시 이미지 추가할 때 이미지의 설명넣기 기능을 추가합니다.
+        </span><br />
+        <span class="txt">
+            <span class="firebrick">XML:figure@default_caption,Config:config.Figure.DefaultCaption</span>&nbsp;&nbsp;이미지 설명 추가시 기본값을 설정합니다. 
+        </span>
+        <span class="txt">
+            <span class="firebrick">XML:figure@figcaption_style,Config:config.Figure.FigcaptionStyle</span>&nbsp;&nbsp;css style을 입력하여 figcaption의 style을 설정합니다. 
+        </span>
+        <span class="txt">
+            <span class="firebrick">XML:figure@figure_style,Config:config.Figure.FigureStyle</span>&nbsp;&nbsp;css style을 입력하여 figure tag의 style을 설정합니다.  
+        </span>
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>이미지 추가시 이미지 설명에 대한 설정들을 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;figure use="1" default_caption="DEXT5 Editor" figcaption_style="color:blue;font-size:14pt" figure_style="border:solid gray"&#62;&#60;/figure&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.Figure.Use = "1";
+        DEXT5.config.Figure.DefaultCaption = "DEXT5 Editor";
+        DEXT5.config.Figure.FigcaptionStyle = "color:blue;font-size:14pt;";
+        DEXT5.config.Figure.FigureStyle = "border:solid gray;";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

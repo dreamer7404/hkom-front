@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">                  
+    <h3 class="title">DEXT5 Editor :: Placeholder</h3>
+    <p class="ttl">XML : &#60;placeholder content="....."&#62;&#60;/placeholder&#62;, Config : config.Placeholder.Content <br />
+        XML : &#60;placeholder font_color="....."&#62;&#60;/placeholder&#62;, Config : config.Placeholder.FontColor<br />
+        XML : &#60;placeholder font_family="....."&#62;&#60;/placeholder&#62;, Config : config.Placeholder.FontFamily<br />
+        XML : &#60;placeholder font_size="....."&#62;&#60;/placeholder&#62;, Config : config.Placeholder.FontSize<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터 Body 내부에 아무글도 작성 안했을 때 표시되는 기본문구의 내용 및 CSS를 설정합니다. <br />
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">content</span>&nbsp;&nbsp;출력할 문구를 설정합니다. <br />
+        <span class="firebrick">font_color</span>&nbsp;&nbsp;Placeholder의 폰트 색상을 설정합니다. <br />
+        <span class="firebrick">font_family</span>&nbsp;&nbsp;Placeholder의 글꼴을 설정합니다.<br />
+        <span class="firebrick">font_size</span>&nbsp;&nbsp;Placeholder의 폰트 크기를 설정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>에디터 Body 내부에 아무글도 작성 안했을 때 표시되는 기본문구의 내용 및 CSS를 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;placeholder content="내용을 입력하세요." font_color="rgb(50,100,140)" font_family="Arial" font_size="20pt"&#62;&#60;/placeholder&#62;  
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.Placeholder = {
+            Content : "내용을 입력하세요.",
+            FontColor : "rgb(50,100,140)",
+            FontFamily : "Arial",
+            FontSize : "20pt"
+        }
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

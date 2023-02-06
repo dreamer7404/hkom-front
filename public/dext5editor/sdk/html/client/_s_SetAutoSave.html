@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: SetAutoSave</h3>
+    <p class="ttl">XML : &#60;set_auto_save&#62;.....&#60;/set_auto_save&#62; <br/>Config : config.SetAutoSave.Mode<br />
+        XML : &#60;set_auto_save interval="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.Interval<br />
+        XML : &#60;set_auto_save max_count="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.MaxCount<br />
+        XML : &#60;set_auto_save save_and_start_interval="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.SaveAndStartInterval<br />
+        XML : &#60;set_auto_save unique_key="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.UniqueKey<br />
+        XML : &#60;set_auto_save use_encrypt="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.UseEncrypt<br />
+        XML : &#60;set_auto_save use_manually_save="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.UseManuallySave
+        XML : &#60;set_auto_save use_manually_save_shortcut_key="....."&#62;&#60;/set_auto_save&#62;<br/>Config : config.SetAutoSave.UseManuallySaveShortcutKey
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터에서 자동저장에 관련된 기능을 설정합니다. 
+    </p>
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">set_auto_save</span>&nbsp;&nbsp;기본값은 "2" 이고 에디터 환경설정에서 사용자가 설정, "0"으로 설정 시 사용 안함, "1"로 설정 시 자동저장 기능을 사용합니다. <br />
+        <span class="firebrick">interval</span>&nbsp;&nbsp;자동저장 주기를 숫자만 입력하여 설정합니다. (단위는 "분" 입니다.)<br />
+        <span class="firebrick">max_count</span>&nbsp;&nbsp;자동저장될 최대 개수를 숫자만 입력하여 설정합니다.<br />
+        <span class="firebrick">save_and_start_interval</span>&nbsp;&nbsp;에디터 환경설정에서 자동저장 기능 활성화 시 최초 저장 여부를 설정합니다.(0:즉시 최초저장, 1:interval후 최초 저장) <br /> 
+        <span class="firebrick">unique_key</span>&nbsp;&nbsp;자동저장되는 localstorage key에 해당 값을 추가합니다. (dext_<b>id</b>_<b>unique_key</b>_0 형태로 저장됩니다.) <br /> 
+        <span class="firebrick">use_encrypt</span>&nbsp;&nbsp;localstorage에 자동 저장되는 html의 암호화 여부를 설정합니다. (0:암호화안함, 1:암호화함)<br /> 
+        <span class="firebrick">use_manually_save</span>&nbsp;&nbsp;수동 임시 저장 기능의 사용여부를 설정합니다. (0:사용안함, 1:사용함) <br /> 
+        <span class="firebrick">use_manually_save_shortcut_key</span>&nbsp;&nbsp;에디터에서 ctrl + s 단축키 입력시 수동 임시 저장을 수행하도록 설정합니다. <br />
+        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+        (단축키의 기본값은 에디터body를 html로 다운로드하는 기능을 수행합니다.)
+
+    </p>
+    <p class="mttl01">sample code</p>            
+    <div class="cord">
+        <pre class="pre">
+<b>에디터에서 자동저장에 관련된 설정을 적용합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;set_auto_save interval="10" max_count="3" save_and_start_interval="0" unique_key="autosaved"
+    use_encrypt="1" use_manually_save="1" use_manually_save_shortcut_key ="1"&#62;1&#60;/set_auto_save&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;   
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.SetAutoSave = {
+            Mode: "1",
+            Interval: "10",
+            MaxCount: "3",
+            SaveAndStartInterval: "0",
+            UniqueKey: "autosaved",
+            UseEncrypt: "1",
+            UseManuallySave: "1",
+            UseManuallySaveShortcutKey: "1"
+        };
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

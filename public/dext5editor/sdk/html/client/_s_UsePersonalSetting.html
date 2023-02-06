@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: UsePersonalSetting</h3>
+    <p class="ttl">XML : &#60;use_personal_setting&#62;.....&#60;/use_personal_setting&#62;, <br />Config : config.UsePersonalSetting<br />
+        XML : &#60;use_personal_setting font_family_use_key_in="....."&#62;&#60;/use_personal_setting&#62;,<br /> Config : config.PersonalSettingUseFontFamilyKeyin<br />
+        XML : &#60;use_personal_setting font_size_use_key_in="....."&#62;&#60;/use_personal_setting&#62;,<br /> Config : config.PersonalSettingUseFontSizeKeyin<br />
+        XML : &#60;use_personal_setting line_height_use_key_in="....."&#62;&#60;/use_personal_setting&#62;,<br /> Config : config.PersonalSettingUseLineHeightKeyin
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        환경설정 다이얼로그의 개인화 기능을 설정합니다.<br/>
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">use_personal_setting</span>&nbsp;&nbsp;기본값은 "0" 이며 사용 안함, "1" 로 설정 시 환경 설정 다이얼로그에 개인화 설정 항목을 활성화 합니다. <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (자동저장, 자동글머리, 이미지로붙여넣기팝업창, 기본 글꼴, 기본 글자크기, 기본 줄간격) <br />
+        <span class="firebrick">font_family_use_key_in</span>&nbsp;&nbsp;기본값은 "0" 이며 글꼴 항목에 직접 입력 사용안함, "1" 로 설정 시 글꼴 항목에 직접 입력하는 설정을 추가 합니다. <br />
+        <span class="firebrick">font_size_use_key_in</span>&nbsp;&nbsp;기본값은 "0" 이며 글자크기 항목에 직접 입력 사용안함, "1" 로 설정 시 기본 글자크기 항목에 직접 입력하는 설정을 추가 합니다. <br />
+        <span class="firebrick">line_height_use_key_in</span>&nbsp;&nbsp;기본값은 "0" 이며 기본 줄간격 항목에 직접 입력 사용안함, "1" 로 설정 시 기본 줄간격 항목에 직접 입력하는 설정을 추가 합니다.
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>환경설정 다이얼로그의 개인화 기능을 설정합니다.</b>
+<b>기본글꼴, 기본글자크기, 기본줄간격 항목에 직접 입력이 가능하도록 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;use_personal_setting font_family_use_key_in="1" font_size_use_key_in="1" line_height_use_key_in="1"&#62;1&#60;/use_personal_setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+    
+&#60;!-- ..... 생략 ..... --&#62;
+    
+&#60;div style="width:900px;height:550px"&#62;    
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.UsePersonalSetting = "1";
+        DEXT5.config.PersonalSettingUseFontFamilyKeyin = "1";
+        DEXT5.config.PersonalSettingUseFontSizeKeyin = "1";
+        DEXT5.config.PersonalSettingUseLineHeightKeyin = "1";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title nline">DEXT5 Editor :: Event.SetForbiddenWordComplete</h3>
+    <p class="ttl">void SetForbiddenWordComplete(editorId, paramObject)</p>
+    <p class="txt">
+        금지어 추출 다이얼로그가 적용, 취소, 닫기 등으로 완료 시 발생합니다.
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">editorId</span>&nbsp;&nbsp;이벤트가 발생한 에디터의 id입니다.<br />
+        <span class="firebrick">paramObject</span>&nbsp;&nbsp;금지어추출 적용 후 정보를 담은 객체 입니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        에디터의 설정파일(dext5editor/config/dext_editor.xml)의 <b>setting 설정 forbidden_word의 mode 속성값이 1인 경우</b>에 이벤트가 발생합니다.<br />
+        <b class="firebrick">paramObject</b>는 아래의 정보를 담고 있습니다. <br />
+        &nbsp;-&nbsp;paramObject.callbackStatus = 적용한 동작 (cancle || apply) <br />
+        &nbsp;-&nbsp;paramObject.callbackType = 기능을 호출한 방식 (API || ICON) <br />
+        &nbsp;-&nbsp;paramObject.permitWord = 금지어 추출에 걸린 항목들 중 적용 후 남은 금지어 리스트(중복O) <br />
+        &nbsp;-&nbsp;paramObject.permitWordToDeduplication = 금지어 추출에 걸린 항목들 중 적용 후 남은 금지어 리스트(중복X) <br />
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;
+&#60;script type="text/javascript"&#62;
+    
+    var SetForbiddenWordComplete = function (editorId, paramObject) {
+        // work something ...
+    }
+
+    DEXT5.config.Event = {
+        SetForbiddenWordComplete: SetForbiddenWordComplete
+    }
+
+&#60;/script&#62; 	
+&#60;/head&#62;
+&#60;body&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;div style="width:900px;height:550px"&#62;  
+
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor("editor1");
+    &#60;/script&#62;        
+
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

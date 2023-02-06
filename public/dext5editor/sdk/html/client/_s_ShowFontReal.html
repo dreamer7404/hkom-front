@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: ShowFontReal</h3>
+    <p class="ttl">XML : &#60;show_font_real&#62;.....&#60;/show_font_real&#62;Config : config.ShowFontReal<br />
+        XML : &#60;show_font_real mode="....."&#62;&#60;/show_font_real&#62;Config : config.ShowFontRealMode<br />
+    </p>
+    <p class="txt">
+        <b>Config 설정이 우선 적용됩니다.</b><br />
+        에디터가 사용되는 곳에서의 실제 폰트명 및 크기를 설정합니다.
+    </p> 
+    <p class="mttl01">remarks</p>
+    <p class="txt">
+        <span class="firebrick">show_font_real</span>&nbsp;&nbsp; 기본값은 "1" 이며 설정 시 실제 폰트명, 크기 사용함, "0" 으로 설정 시 사용하지 않습니다.<br />
+        <span class="firebrick">mode</span>&nbsp;&nbsp; 기본값은 "1" 이며 기존로직 사용, "2"로 설정 시 셀렉션 후 셀렉션 된 부분을 클릭 시 폰트종류, 크기 부분이 잘못 나오는 경우를 보정합니다.<br />
+    </p>   
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+<b>에디터가 사용되는 곳에서의 실제 폰트명 및 크기를 사용으로 설정합니다.</b>
+
+<b>XML</b>
+
+.....
+&#60;setting&#62;
+    .....
+    &#60;show_font_real mode="2"&#62;1&#60;/show_font_real&#62;
+    .....
+&#60;/setting&#62;
+.....
+
+<b>Config</b>
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+ 
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px"&#62;   
+    &#60;script type="text/javascript"&#62;
+
+        DEXT5.config.ShowFontReal = "1";
+        DEXT5.config.ShowFontRealMode = "2";
+
+        new Dext5editor("editor1");
+
+    &#60;/script&#62;       
+&#60;/div&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

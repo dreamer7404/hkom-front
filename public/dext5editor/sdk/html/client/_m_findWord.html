@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: findWord</h3>
+    <p class="ttl">void findWord(option, editor_id)</p>
+    <p class="txt">
+        option 객체의 정보로 에디터 body영역에서 문자열을 찾아 해당 영역을 select 합니다.
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">option</span>&nbsp;&nbsp;API 설정을 포함한 Object 입니다.<br />
+        &nbsp;&nbsp;({ searchText : "찾을문자열", caseSensitive : 대소문자구분여부(T||F), revertEndDocument : 문서끝에서되돌리기(T||F),  <br />
+        &nbsp;&nbsp;&nbsp;wordByWord : "단어단위탐색"(T||F), searchDirection : 찾는방향(T:위->아래, F:아래->위), initFocus : 커서 위치 고정여부(T||F) })<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        없음.
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function findWordFunction(){
+        var Obj = {
+            searchText:'DEXT5', 
+            caseSensitive:false, 
+            revertEndDocument:true,
+            wordByWord:false, 
+            searchDirection:true, 
+            initFocus:false
+        }
+        // "DEXT5"라는 문자열을 id가 editor1인 에디터에서 위에서 아래방향으로 문서 끝이면 되돌리고
+        // 찾은 위치로 커서를 변경하면서 대소문자 구분없이 문자단위로 찾습니다.
+        DEXT5.findWord(Obj,'editor1');
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+

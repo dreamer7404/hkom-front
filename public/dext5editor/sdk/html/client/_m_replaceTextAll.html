@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DEXT5 Developer Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link href="../../css/sdkContents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="dext5help_content_right">
+<div class="right_con">           
+    <h3 class="title">DEXT5 Editor :: replaceTextAll</h3>
+    <p class="ttl">void replaceTextAll(paramObj, editor_id)</p>
+    <p class="txt">
+        에디터 작성영역에서 모든 특정 text를 replace text로 변경 해줍니다. <br />
+    </p>
+    <p class="mttl01">return value</p>
+    <p class="txt">
+        없음.
+    </p>            
+    <p class="mttl01">parameters</p>     
+    <p class="txt">
+        <span class="firebrick">paramObj</span>&nbsp;&nbsp;replaceText의 option parameter object 입니다.<br />
+        <span class="firebrick">editor_id</span>&nbsp;&nbsp;에디터의 id를 의미합니다.<br />
+    </p>
+    <p class="mttl01">remarks</p>               
+    <p class="txt">
+        <span class="firebrick">paramObj</span>는 다음과 같은 정보를 포함합니다. <br />
+        searchText : 셀렉션 할 단어, <br /> 
+        replaceText : 교체 할 단어, <br /> 
+        caseSensitive : 대소문자 구분 (true || false), <br /> 
+        showAlert : alert 발생 여부 (true || false) <br /> 
+    </p>    
+    <p class="mttl01">sample code</p>             
+    <div class="cord">
+        <pre class="pre">
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;script type="text/javascript" src="dext5editor/js/dext5editor.js"&#62;&#60;/script&#62;	
+&#60;script type="text/javascript"&#62;
+
+    function dext5Replace(){
+        // option parameter object 설정
+        var paramObj = {
+            searchText:"Editor", 
+            replaceText:"DEXT5", 
+            caseSensitive:false, 
+            showAlert:false
+        }
+        // id가 editor1인 에디터에서 paramObj의 값으로 replaceText API를 수행합니다.
+        DEXT5.replaceTextAll(paramObj, 'editor1');
+        // work something ...
+    }
+
+&#60;/script&#62;	
+
+&#60;!-- ..... 생략 ..... --&#62;
+ 
+&#60;div style="width:900px;height:550px;"&#62; 
+ 
+    &#60;!-- 에디터 생성 --&#62;  
+    &#60;script type="text/javascript"&#62;
+        new Dext5editor('editor1');
+    &#60;/script&#62;
+
+&#60;/div&#62;
+
+&#60;!-- ..... 생략 ..... --&#62;
+
+&#60;/body&#62;
+&#60;/html&#62;
+        </pre>  
+    </div>                   
+    </div>
+</div>
+</body>
+</html>
+
