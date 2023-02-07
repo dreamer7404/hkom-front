@@ -7,6 +7,8 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import BaseLayout from './BaseLayout';
 import BasePage from './BasePage';
 import PageLoader from '../Common/PageLoader';
+import PostListContainer from '../Contents/Test/PostListContainer';
+import PostContainer from '../Contents/Test/PostContainer';
 
 // children components
 const Login = lazy(() => import('../Contents/Auth/Login'));
@@ -52,6 +54,9 @@ const BaseRoutes = () => {
                         <div>
                             <Suspense fallback={<PageLoader/>}>
                                 <Routes location={location}>
+                                    <Route path="/postList" element={<PostListContainer />}></Route>
+                                    <Route path="/post/:id" element={<PostContainer />}></Route>
+
                                     <Route path="/totalStock" element={<TotalStockMain />}></Route>
                                     <Route path="/sewonIvm" element={<SewonIvmMain />}></Route>
                                     <Route path="/" element={<Dashboard />}></Route>

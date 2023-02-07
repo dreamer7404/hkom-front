@@ -1,25 +1,32 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import PostList from './PostList';
-import { getPosts } from '../../../store/posts';
+import React from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import {getPosts} from '../../../api/posts';
+import { getPost } from '../../../store/posts';
+import Post from './Post';
 
-function PostListContainer() {
-  const { data, loading, error } = useSelector(state => state.posts.posts);
-  const dispatch = useDispatch();
+function PostContainer({ match }) {
 
-  // 컴포넌트 마운트 후 포스트 목록 요청
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
+    const { id } = useParams();
 
+    const {data, loading, error} = useSelector(state => state.posts.post);
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(getPost(parseInt(id, 10)));
+    }, [id, dispatch]);
 
-  if (loading) return <div>로딩중...</div>;
-  if (error) return <div>에러 발생!</div>;
-  if (!data) return null;
-  return <PostList posts={data} />;
-}
+    if (loading) return <div>로딩중...</div>;
+    if (error) return <div>에러 발생!</div>;
+    if (!data) return null;
 
-export default PostListContainer;
+    return (
+        <div>
+            {/* <Post post={data} /> */}
+            <h1>{data.title}</h1>
+            <p>{data.body}</p>
+       </div>
+    );
+};
+export default PostContainer;
