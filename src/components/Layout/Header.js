@@ -21,7 +21,7 @@ const Header = () => {
                         <Nav.Link href="/profile" style={{color:'white'}} >운영관리</Nav.Link>
                         <Nav.Link href="/profile" style={{color:'white'}} >시스템관리</Nav.Link>
                         
-                        <NavDropdown title={<span className="text-white my-auto">시스템관리</span>} id="collasible-nav-dropdown">
+                        <NavDropdown title={<span className="text-white my-auto">시스템관리</span>}>
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Another action
