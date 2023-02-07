@@ -5,5 +5,5 @@ export const getPosts = () => {
 }
 
 export const getPostById = id => {
-    return  data.posts[2];
+    return data.posts.find(d => d.id === id);
 }
