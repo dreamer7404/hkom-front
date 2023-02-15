@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# token(1)
+
+1. 로그인 시 유효 기간이 매우 짧은 Access Token과 유효 기간이 긴 Refresh Token을 함께 발급.
+2. Refresh Token은 서버에 저장하여 관리
+3. 클라이언트는 Access Token을 private 변수로 저장
+4. Refresh Token은 HTTP Only 쿠키에 저장
+5. Access Token이 만료되면 Refresh Token을 통해 새 Access Token과 새 Refresh Token을 재발급
+6. 새로고침으로 Access Token 값이 없어지면 Refresh Token을 통해 새 Access Token과 새 Refresh Token을 발급
+   ß
