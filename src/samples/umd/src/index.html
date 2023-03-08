@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body {
+				font-size: 0.875rem;
+				font-family: Sans-Serif;
+			}
+
+			footer {
+				margin: 1rem 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script src="react.production.min.js"></script>
+		<script src="react-dom.production.min.js"></script>
+		<script src="index.umd.development.js"></script>
+		<script src="babel.min.js"></script>
+		<script type="text/babel">
+			const element = document.getElementById("root");
+
+			ReactDOM.createRoot(element).render(
+				<React.StrictMode>
+					<div>
+						<section>
+							<DEXT5UploadReact.DEXT5Upload
+								debug={true}
+								id='kupload1'
+								
+								mode='edit'
+								
+								config={{MaxTotalFileSize:'100MB', MaxOneFileSize:'10MB', DevelopLangage:'NONE'}}
+								
+								componentUrl="/dext5upload/js/dext5upload.js"
+						/>
+						</section>
+						<footer>{`Running React v${React.version}`}</footer>
+					</div>
+				</React.StrictMode>
+			);
+		</script>
+	</body>
+</html>

@@ -9,6 +9,7 @@ import BasePage from './BasePage';
 import PageLoader from '../Common/PageLoader';
 import PostListContainer from '../Contents/Test/PostListContainer';
 import PostContainer from '../Contents/Test/PostContainer';
+import TestQuery from '../Contents/Test/TestQuery';
 
 // children components
 const Login = lazy(() => import('../Contents/Auth/Login'));
@@ -62,6 +63,9 @@ const BaseRoutes = () => {
                                     <Route path="/" element={<Dashboard />}></Route>
                                      {/*<Route path="/profile" component={waitFor(Profile)} />
                                     <Route path="*" component={waitFor(Login)} /> */}
+
+
+                                    <Route path="/testQuery" element={<TestQuery />}></Route>
                                 </Routes>
                              </Suspense>
                         </div>
