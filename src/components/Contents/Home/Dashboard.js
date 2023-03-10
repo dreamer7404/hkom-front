@@ -83,6 +83,11 @@ const Dashboard = () => {
     }
 
 
+    const getPgmmgmtList = () => {
+        const data = queryClient.getQueryData(['getPgmmgmtList']);
+        console.log(data);
+    }
+
 
     
 
@@ -144,6 +149,9 @@ const Dashboard = () => {
             </div>
             <div>
                 <Button appearance="primary" size="sm"  className='m-1' onClick={createUser}>create user</Button>
+            </div>
+            <div>
+                <Button appearance="primary" size="sm"  className='m-1' onClick={getPgmmgmtList}>getPgmmgmtList</Button>
             </div>
 
 {isSuccess && 

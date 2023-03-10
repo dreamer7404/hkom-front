@@ -8,4 +8,6 @@ export const getUsrmgmtList = async (param) => {
 export const insertUsrmgmt = async (param) => {
     return await axios.post(`http://localhost:8000/api/usrmgmt`, {});
 }
-
+export const getPgmmgmtList = async (param) => {
+    return await axios.get(`http://localhost:8000/api/pgmMgmts`);
+}

@@ -1,8 +1,10 @@
 // react
-import React from 'react';
+import React, {useEffect} from 'react';
 
 // react-bootstrap
 import Container from 'react-bootstrap/Container';
+
+import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 // components
 import Header from "./Header";
@@ -14,7 +16,17 @@ import Section from './Section';
 import '../../styles/layer.css';
 import SitePath from './SitePath';
 
+// api
+import {getPgmmgmtList} from '../../api/sys';
+
 const BaseLayout = ({children}) => {
+
+    useEffect(() => {
+
+    },[]);
+
+    useQuery(['getPgmmgmtList'], () => getPgmmgmtList()); 
+
     
     return (
         <Container fluid>
