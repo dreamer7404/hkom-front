@@ -1,0 +1,16 @@
+select * from ( SELECT A.QLTY_VEHL_CD 
+as qltyVehlCd ,B.QLTY_VEHL_NM as qltyVehlNm ,A.DL_EXPD_REGN_CD as dlExpdRegnCd ,C.DL_EXPD_PRVS_NM 
+as dlExpdPrvsNm , (select za.MDL_MDY_CD from tb_vehl_mdy_mgmt ZA where ZA.QLTY_VEHL_CD = a.qlty_vehl_cd 
+and ZA.DL_EXPD_REGN_CD = a.dl_expd_regn_cd and SUBSTR(replace('2023-01-01', '-', ''), 3, 4) 
+between ZA.DESMP1_CD and ZA.DEFMP1_CD ) as col1 , (select za.MDL_MDY_CD from tb_vehl_mdy_mgmt 
+ZA where ZA.QLTY_VEHL_CD = a.qlty_vehl_cd and ZA.DL_EXPD_REGN_CD = a.dl_expd_regn_cd and SUBSTR(replace('2023-02-01', 
+'-', ''), 3, 4) between ZA.DESMP1_CD and ZA.DEFMP1_CD ) as col2 , (select za.MDL_MDY_CD from 
+tb_vehl_mdy_mgmt ZA where ZA.QLTY_VEHL_CD = a.qlty_vehl_cd and ZA.DL_EXPD_REGN_CD = a.dl_expd_regn_cd 
+and SUBSTR(replace('2023-03-01', '-', ''), 3, 4) between ZA.DESMP1_CD and ZA.DEFMP1_CD ) as 
+col3 , (select za.MDL_MDY_CD from tb_vehl_mdy_mgmt ZA where ZA.QLTY_VEHL_CD = a.qlty_vehl_cd 
+and ZA.DL_EXPD_REGN_CD = a.dl_expd_regn_cd and DEFMP1_CD = '9999' ) as col13 FROM TB_VEHL_MDY_MGMT 
+A , TB_VEHL_MGMT B , TB_CODE_MGMT C WHERE A.QLTY_VEHL_CD = B.QLTY_VEHL_CD AND A.MDL_MDY_CD 
+= B.MDL_MDY_CD AND B.DL_EXPD_CO_CD = '01' AND C.DL_EXPD_G_CD = '0008' AND A.DL_EXPD_REGN_CD 
+= C.DL_EXPD_PRVS_CD AND ((A.DESMP1_CD BETWEEN SUBSTR(REPLACE('2023-01-01','-',''),3,4) AND 
+SUBSTR(REPLACE('2023-03-31','-',''),3,4) ) OR (A.DEFMP1_CD = '9999')) ORDER BY A.QLTY_VEHL_CD, 
+A.MDL_MDY_CD, A.DL_EXPD_REGN_CD ) as xa group by xa.qltyVehlCd,qltyVehlNm,dlExpdRegnCd,dlExpdPrvsNm 
