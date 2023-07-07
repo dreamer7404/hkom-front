@@ -1,7 +1,10 @@
 
 pc: H/KMC123
 autoway-메신저 => 9426036 /  Bomi0806!
-autoway-웹, cody-ims => 9426036 / Bomi0806!
+autoway-웹, cody-ims => 9426036 / Bomi0806^^
+
+보안업무점검 아이디: WI00004232
+
 
 1. 개발사이트 정보
 
@@ -45,14 +48,47 @@ PW: asdf123!
 	  try_files $uri $uri/ /index.html;
 	}
 
-#DEXT5
+## DEXT5Editor	담당
+ 임석원02-584-3923
+ support@raonwiz.com 
+
+## DEXT5Editor
 	- Product Key:	7L20-6XDR-83E3-EPUC
 	- Editor License Key:	BJ8vhJrQGg/XrPfZlvTZnpfYj1nZZOh43wie20VcP+X0ZJVyhgfZmOTYhMjZiXTYp2TYiDTZlYtG3N2Z2YJG2YSc22CZBel4D87WPmqpvS1jD86ZD87WPmhqvV1jDV1YEiUkwuwsDuQrCb7jPmIsPmqVBfd4QTxtBfFQQjcqIlhexi60Q6xWPxyLyxI4QfctRSttQjcVPfd4
+
+## DEXT5Upload
+- Product Key
+38N1-C4N2-0IJ4-IH5H
+- License Key
+lgo-JNyezbt2xrgMvJUK8dvjqcFqHSnzq-0jZFLaVb7t5i1i4oxJ1KvzTz5m6IQTIpLdJGippsVexu2DKrBTBlVkOTL39k5XaRqX7QszcZdz4mMiirxmiXrClm9wLg5MPwGFLK-trNwngS3VAdF9KicKhhCDAowUobtW_mama68p6Se6X4kVxwC--dcib0i_SVP-xwn3G98l6m5D2jVOuA2
+
+ * 운영계
+- Product Key
+2HUW-ZONK-2SG2-88S3
+- License Key
+mW9kKGRaavDtX9EeOgQ5SkyfHttKlD79sDc01t7Hid1kXxoBmDRBd28H5MobuNz8oQT3jswTWak6M5IkyOpjxJjHgGAkii0x_MtyxA07STbh5ydJcnr_QnZBimBPYIXbVMJUrcoirCXSAx-jJwkkMGJYLGGr4L83ggKgqU48WKVSm7q88C9tWc2tHN0DzksdJBVIPdCreAsmchfPGw6lTA2
 
 	
 
 # https://gitlab.hmc.co.kr/
-	9426036 / Dreamer7404!
+	9426036 / BK6qsT6_b_kKvHH3MPEy
+# token name
+	ahnks
+#  personal access token!!!!! 
+BK6qsT6_b_kKvHH3MPEy
+
+# gitlab 초기화코드들
+- 53ae6b7a00040cdd
+- 659a1e51a304b988
+a83e49a465967acb
+424a17c564a6eef0
+b9de76ae2f9356f6
+ca43d039cd6c17aa
+ecd0c57d79f9f8b0
+c6b63371ceecd7ca
+0cf63265b66a3771
+414fb78c7960cedf
+
 
 # JDBC 
 #------------- localhost ---------------
@@ -70,41 +106,45 @@ spring.datasource.username=HKOMMS_WAS
 spring.datasource.password=Jj#06dnjf
 
 
------- to-be ----------
-1. log table 데이타필요 => 안책임
-2. gitLab 김부장님것 올리기 - 현대/기아 2개
-3. 보안교육문서 받기
+
+------- SMTP -----------
+아이디	ZD24836
+비밀번호 	Ownersmanua2305!!
+도메인	outlook00.hmc.co.kr
+IP	10.7.20.48
+PORT	25
+이메일 주소 	oms_notification@hyundai.com
+
+k0405@ccmedia.co.kr
+
+------------- trouble -----------------
+react route 문제
+https://velog.io/@coolchaem/React-Router-%EC%97%90%EB%9F%AC-SPA-refresh-%EB%AC%B8%EC%A0%9C
+
+------- 안상천부장님 --------------
+1. tb_log_eml의 eml_scd_cd 의 코드를 어떤걸 사용하는지요?
+2. tb_board_affr_rcv_users: 수신자정보 테이블 
 
 
-
----- smtp ------------------
-smtp.host
-smtp.port
-게정아이디/패스
-보내는사람 메일주소
-
-
-------- 백업제외 -----------
-if_*
-ins_*
-pms*
-pse*
-tb_acl_mst_info
-tb_aps_prod_sum_info
-tb_auth_vehl_0402back
-tb_batch_*
-tb_plnt_*
-tb_prod_mst_*
-tb_prnt_algn_info
-tb_prnt_page_mgmt
-*_log
-
-mysqldump: Couldn't execute 'FLUSH
+---------------- 개발서버 -------------------------
+2. google auth
+3. kr-hmg 선택
+4. 접속게정관리
+5. 생성 -> 본인계정 -> 발급계정
 
 
-INSERT INTO tb_vehl_crgr_mgmt
+web source : /webroot/hkomms
+was : /wasapp/hkomms 
+----------------// 개발서버 -------------------------
 
-(QLTY_VEHL_CD, MDL_MDY_CD, CRGR_EENO, BLNS_CO_CD, USE_YN, ET_YN, PPRR_EENO, FRAM_DTM, UPDR_EENO, MDFY_DTM)
+---개발할일
+	- /partner 
+	- interceptor 에서 사용자별url 접근권한 체크! - 프로그램관리-권한등록먼저하고...
 
-VALUES('KK61', '21', 'H2212239', '01', 'Y', NULL, 'H2302603', '2013-02-04 09:59:57.000', '5222138', '2013-02-04 09:59:57.000'); 
+	- refresh token
+	- 보안관련 - pw암호화
+	- 사용안한시간 자동로그아웃
+
+	- env분리
+
 
